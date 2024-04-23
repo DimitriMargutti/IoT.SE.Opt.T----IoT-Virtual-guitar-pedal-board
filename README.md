@@ -18,7 +18,7 @@ The Virtual Pedalboard for Guitars arises from the need to provide guitarists wi
 
 The main architecture of the project uses the following scheme:
 
-<img src="Images/MainCircuit.png" alt="Architecture" width="" height="">
+<img src="Images/MainCircuit.png" alt="Architecture" style="width: 1000px; height: auto;">
 
 Where we have:
 
