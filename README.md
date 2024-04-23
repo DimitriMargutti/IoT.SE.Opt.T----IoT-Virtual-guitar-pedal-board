@@ -18,6 +18,16 @@ Como arquitetura principal do projeto utiliza-se o seguinte esquema:
 
 ![Arquitetura](Images/MainCircuit.png)
 
+- The Input Stage: Amplifies and filters the guitar signal making it ready for the ADC (Analog to Digital Converter). The ADC sends the signal to the PI ZERO using SPI communication. In the forum, the topic "Using MCP3202 ADC with Raspberry Pi Zero" gives more details about the ADC-Pi ZERO connection.
+  
+- Pi ZERO: It takes the digitalized audio waveform from the ADC and does all the Digital Signal Processing (DSP) creating effects (distortion, fuzz, delay, echo, tremolo...).  In the forum, the topic "Basics of Audio DSP in C for Raspberry Pi Zero" can assist you to learn the basics.
+  
+- The Output Stage: Once the new digital waveform is created, the Pi Zero creates an analog signal with two PWMs combined, the signal is filtered and prepared to be sent to the next pedal or the guitar amp.  For more info check the topic "PWM Audio on Raspberry Pi Zero".
+
+Portanto o funcionamento pode ser representado pela seguinte representação
+
+![Funcionamento](Images/AmpCircuit.png)
+
 ## Manual de Instalação e Configuração
 
 ### Instalação e utilização do arduino cloud
