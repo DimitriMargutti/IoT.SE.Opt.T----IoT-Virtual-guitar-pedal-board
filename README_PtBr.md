@@ -128,3 +128,5 @@ E a seguinte imagem serve como inspiração para a criação do painel de contro
   - [ElectroSmash](https://www.electrosmash.com/pedal-pi)
   - [NeuralPi](https://github.com/GuitarML/NeuralPi)
   - [Pi-FX : A Raspberry Pi-Based Pedal Board](https://tibbbz.medium.com/guitarix-the-pi-dle-board-8d6298ca8e42)
+  - Documentação oficial da Web Audio API: [https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
+  - Documentação oficial da Web MIDI API: [https://www.w3.org/TR/webmidi/](https://www.w3.org/TR/webmidi/)
