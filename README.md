@@ -16,7 +16,10 @@ A Pedaleira Virtual para Guitarras surge da necessidade de proporcionar aos guit
 
 Como arquitetura principal do projeto utiliza-se o seguinte esquema:
 
-![Arquitetura](Images/MainCircuit.png)
+
+<div style="text-align:center;">
+    <img src="Images/MainCircuit.png" alt="Arquitetura">
+</div>
 
 - The Input Stage: Amplifies and filters the guitar signal making it ready for the ADC (Analog to Digital Converter). The ADC sends the signal to the PI ZERO using SPI communication. In the forum, the topic "Using MCP3202 ADC with Raspberry Pi Zero" gives more details about the ADC-Pi ZERO connection.
   
