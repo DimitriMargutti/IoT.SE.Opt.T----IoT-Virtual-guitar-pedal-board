@@ -128,3 +128,5 @@ And the following image serves as inspiration for the creation of the dashboard:
   - [ElectroSmash](https://www.electrosmash.com/pedal-pi)
   - [NeuralPi](https://github.com/GuitarML/NeuralPi)
   - [Pi-FX : A Raspberry Pi-Based Pedal Board](https://tibbbz.medium.com/guitarix-the-pi-dle-board-8d6298ca8e42)
+  - Oficial documentation of Web Audio API: [https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
+  - Oficial documentation of Web MIDI API: [https://www.w3.org/TR/webmidi/](https://www.w3.org/TR/webmidi/)
