@@ -41,7 +41,7 @@ Where we have:
 
 - The Input Stage: Amplifies and filters the guitar signal making it ready for the ADC (Analog to Digital Converter). The ADC sends the signal to the PI ZERO using SPI communication.
   
-- Pi ZERO: It takes the digitalized audio waveform from the ADC and does all the Digital Signal Processing (DSP) creating effects (distortion, fuzz, delay, echo, tremolo...) that, in turn, must be pre-selected from the dashboard in the user's mobile application. From the user's selection, the application establishes communication with the board through MQTT.
+- Pi ZERO: It takes the digitalized audio waveform from the ADC and does all the Digital Signal Processing (DSP) creating effects (distortion, fuzz, delay, echo, tremolo...) that, in turn, must be pre-selected from the dashboard in the user's mobile application. From the user's selection, the application establishes communication with the board through Web socket.
   
 - The Output Stage: Once the new digital waveform is created, the Pi Zero creates an analog signal with two PWMs combined, the signal is filtered and prepared to be sent to the next pedal or the guitar amp.
   
