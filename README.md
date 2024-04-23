@@ -14,20 +14,38 @@ A Pedaleira Virtual para Guitarras surge da necessidade de proporcionar aos guit
 
 ## Arquitetura
 
+### Construção do projeto
+
 Como arquitetura principal do projeto utiliza-se o seguinte esquema:
 
+![Arquitetura](Images/MainCircuit.png)
 
-<div style="text-align:center;">
-    <img src="Images/MainCircuit.png" alt="Arquitetura">
-</div>
+Onde tem-se: 
 
-- The Input Stage: Amplifies and filters the guitar signal making it ready for the ADC (Analog to Digital Converter). The ADC sends the signal to the PI ZERO using SPI communication. In the forum, the topic "Using MCP3202 ADC with Raspberry Pi Zero" gives more details about the ADC-Pi ZERO connection.
+- Based in Raspberry Pi Zero (1GHz ARM11 core).
+- Analog stages using MCP6002 rail-to-rail operational amplifier.
+- ADC: 12bits / Sampling Rate 50Ksps (MCP3202).
+- Output Stage: 12 bits (2x6bits PWMs running in parallel)
+- Pi Zero:
+    - 1GHz ARM11 core.
+    - 512MB of LPDDR2 SDRAM.
+    - Micro-SD card slot.
+- Connectors:
+    - Input Jack, 1/4 inch unbalanced, Zin=0.5MΩ.
+    - Output Jack, 1/4 inch unbalanced, Zout=100Ω.
+    - Power supply: power taken from the Pi Zero board (micro-USB).
+ 
+![Componentes](Images/Components.png)
+
+### Funcionamento
+
+- The Input Stage: Amplifies and filters the guitar signal making it ready for the ADC (Analog to Digital Converter). The ADC sends the signal to the PI ZERO using SPI communication.
   
-- Pi ZERO: It takes the digitalized audio waveform from the ADC and does all the Digital Signal Processing (DSP) creating effects (distortion, fuzz, delay, echo, tremolo...).  In the forum, the topic "Basics of Audio DSP in C for Raspberry Pi Zero" can assist you to learn the basics.
+- Pi ZERO: It takes the digitalized audio waveform from the ADC and does all the Digital Signal Processing (DSP) creating effects (distortion, fuzz, delay, echo, tremolo...) que, por sua vez, devem ser pré selecionados a partir da dashboard no aplicativo no dispositivo móvel do usuário. A partir da seleção do usuário o aplicativo estabelece comunicação com a placa a partir de comunicação MQTT.
   
-- The Output Stage: Once the new digital waveform is created, the Pi Zero creates an analog signal with two PWMs combined, the signal is filtered and prepared to be sent to the next pedal or the guitar amp.  For more info check the topic "PWM Audio on Raspberry Pi Zero".
-
-Portanto o funcionamento pode ser representado pela seguinte representação
+- The Output Stage: Once the new digital waveform is created, the Pi Zero creates an analog signal with two PWMs combined, the signal is filtered and prepared to be sent to the next pedal or the guitar amp.
+  
+Portanto o funcionamento pode ser representado da seguinte forma:
 
 ![Funcionamento](Images/AmpCircuit.png)
 
