@@ -41,7 +41,7 @@ Onde tem-se:
 
 - O Estágio de Entrada: Amplifica e filtra o sinal da guitarra, preparando-o para o ADC (Conversor Analógico-Digital). O ADC envia o sinal para o PI ZERO usando comunicação SPI.
   
-- Pi ZERO: Ele recebe a forma de onda de áudio digitalizada do ADC e realiza todo o Processamento Digital de Sinal (DSP), criando efeitos (distorção, fuzz, delay, eco, tremolo...) que, por sua vez, devem ser pré-selecionados no painel de controle no aplicativo móvel do usuário. A partir da seleção do usuário, o aplicativo estabelece comunicação com a placa através de comunicação MQTT.
+- Pi ZERO: Ele recebe a forma de onda de áudio digitalizada do ADC e realiza todo o Processamento Digital de Sinal (DSP), criando efeitos (distorção, fuzz, delay, eco, tremolo...) que, por sua vez, devem ser pré-selecionados no painel de controle no aplicativo móvel do usuário. A partir da seleção do usuário, o aplicativo estabelece comunicação com a placa através de comunicação Web socket.
   
 - O Estágio de Saída: Uma vez que a nova forma de onda digital é criada, o Pi Zero cria um sinal analógico com dois PWMs combinados, o sinal é filtrado e preparado para ser enviado para o próximo pedal ou o amplificador de guitarra.
 
