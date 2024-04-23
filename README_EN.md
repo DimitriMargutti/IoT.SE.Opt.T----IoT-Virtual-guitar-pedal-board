@@ -18,7 +18,7 @@ The Virtual Pedalboard for Guitars arises from the need to provide guitarists wi
 
 The main architecture of the project uses the following scheme:
 
-![Architecture](Images/MainCircuit.png)
+<img src="Images/MainCircuit.png" alt="Architecture" width="" height="">
 
 Where we have:
 
@@ -35,7 +35,7 @@ Where we have:
     - Output Jack, 1/4 inch unbalanced, Zout=100Ω.
     - Power supply: power taken from the Pi Zero board (micro-USB).
 
-![Components](Images/Components.png)
+<img src="Images/Components.png" alt="Components" width="600" height="600">
 
 ### Operation
 
@@ -47,9 +47,9 @@ Where we have:
   
 Therefore, the operation can be represented by the following images:
 
-![Operation](Images/AmpCircuit.png)
+<img src="Images/AmpCircuit.png" alt="Operation" width="" height="">
 
-![Communication](Images/ComunicationProcess.png)
+<img src="Images/ComunicationProcess.png" alt="Comunication" width="1200" height="600">
 
 ### Application and Dashboard
 
@@ -57,11 +57,11 @@ For the creation of the application, it is intended to use the Godot software, w
 
 The following image serves as a login screen concept:
 
-![Login Screen](Images/loginScreenConceptualImage.jpg)
+<img src="Images/loginScreenConceptualImage.jpg" alt="Login screen" width="600" height="400">
 
 And the following image serves as inspiration for the creation of the dashboard:
 
-![Dashboard](Images/DashboardInspiration.png)
+<img src="Images/DashboardInspiration.png" alt="Dashboard" width="" height="">
 
 ## Installation and Configuration Manual
 
