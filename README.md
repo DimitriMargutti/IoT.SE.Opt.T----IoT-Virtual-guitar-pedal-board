@@ -18,7 +18,8 @@ A Pedaleira Virtual para Guitarras surge da necessidade de proporcionar aos guit
 
 Como arquitetura principal do projeto utiliza-se o seguinte esquema:
 
-![Arquitetura](Images/MainCircuit.png)
+
+<img src="Images/MainCircuit.png" alt="Arquitetura" width="" height="">
 
 Onde tem-se: 
 
@@ -34,8 +35,8 @@ Onde tem-se:
     - Input Jack, 1/4 inch unbalanced, Zin=0.5MΩ.
     - Output Jack, 1/4 inch unbalanced, Zout=100Ω.
     - Power supply: power taken from the Pi Zero board (micro-USB).
- 
-![Componentes](Images/Components.png)
+
+<img src="Images/Components.png" alt="Componentes" width="600" height="600">
 
 ### Funcionamento
 
@@ -45,9 +46,25 @@ Onde tem-se:
   
 - The Output Stage: Once the new digital waveform is created, the Pi Zero creates an analog signal with two PWMs combined, the signal is filtered and prepared to be sent to the next pedal or the guitar amp.
   
-Portanto o funcionamento pode ser representado da seguinte forma:
+Portanto o funcionamento pode ser representado pelas seguintes imagens:
 
-![Funcionamento](Images/AmpCircuit.png)
+<img src="Images/AmpCircuit.png" alt="Funcionamento" width="" height="">
+
+<img src="Images/ComunicationProcess.png" alt="Comunicação" width="1200" height="600">
+
+### Aplicativo e dashboard
+
+Para a criação do aplicativo pretende-se utilizar o software Godot, amplamente usado para o desenvolvimento de jogos, possibilitando assim um aplicativo intuitivo e funcional. Pretende-se criar um sistema de login para o usuário, para que seja possível salvar os estilos musicais e perfis de pedaleira, possibilitando uma maior personalização por parte do usuário.
+
+Tem-se a seguinte imagem como conceito de tela de login:
+
+
+<img src="Images/loginScreenConceptualImage.jpg" alt="Descrição da Imagem" width="600" height="400">
+
+Como a seguinte imagem como inspiração para crição da dashboard:
+
+<img src="Images/DashboardInspiration.png" alt="Dashboard" width="" height="">
+
 
 ## Manual de Instalação e Configuração
 
