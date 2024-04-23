@@ -14,6 +14,9 @@ A Pedaleira Virtual para Guitarras surge da necessidade de proporcionar aos guit
 
 ## Arquitetura
 
+Como arquitetura principal do projeto utiliza-se o seguinte esquema:
+
+[Arquitetura](images/MainCircuit.png)
 
 ## Manual de Instalação e Configuração
 
