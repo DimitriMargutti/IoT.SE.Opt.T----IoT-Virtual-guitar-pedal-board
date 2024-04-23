@@ -22,14 +22,15 @@ A arquitetura principal do projeto utiliza o seguinte esquema:
 
 Onde tem-se:
 
-- Baseado no Raspberry Pi Zero (núcleo ARM11 de 1GHz).
+- Baseado no Raspberry Pi 4.
 - Estágios analógicos utilizando amplificador operacional de trilho-a-trilho MCP6002.
 - ADC: 12 bits / Taxa de amostragem 50Ksps (MCP3202).
 - Estágio de saída: 12 bits (2x6bits PWMs rodando em paralelo)
-- Pi Zero:
-    - Núcleo ARM11 de 1GHz.
-    - 512MB de SDRAM LPDDR2.
-    - Slot para cartão Micro-SD.
+- Pi 4:
+
+<img src="Images/Pi4.png" alt="Components" width="600" height="600">
+<img src="Images/EspecificationPI4.png" alt="Components" width="600" height="400">
+    
 - Conectores:
     - Jack de entrada, 1/4 polegadas desbalanceado, Zin=0.5MΩ.
     - Jack de saída, 1/4 polegadas desbalanceado, Zout=100Ω.
@@ -39,17 +40,15 @@ Onde tem-se:
 
 ### Funcionamento
 
-- O Estágio de Entrada: Amplifica e filtra o sinal da guitarra, preparando-o para o ADC (Conversor Analógico-Digital). O ADC envia o sinal para o PI ZERO usando comunicação SPI.
+- O Estágio de Entrada: Amplifica e filtra o sinal da guitarra, preparando-o para o ADC (Conversor Analógico-Digital). O ADC envia o sinal para o PI 4 usando comunicação SPI.
   
-- Pi ZERO: Ele recebe a forma de onda de áudio digitalizada do ADC e realiza todo o Processamento Digital de Sinal (DSP), criando efeitos (distorção, fuzz, delay, eco, tremolo...) que, por sua vez, devem ser pré-selecionados no painel de controle no aplicativo móvel do usuário. A partir da seleção do usuário, o aplicativo estabelece comunicação com a placa através de comunicação Web socket.
+- Pi 4: Ele recebe a forma de onda de áudio digitalizada do ADC e realiza todo o Processamento Digital de Sinal (DSP), criando efeitos (distorção, fuzz, delay, eco, tremolo...) que, por sua vez, devem ser pré-selecionados no painel de controle no aplicativo móvel do usuário. A partir da seleção do usuário, o aplicativo estabelece comunicação com a placa através de comunicação MQTT, via NodeRed.
   
 - O Estágio de Saída: Uma vez que a nova forma de onda digital é criada, o Pi Zero cria um sinal analógico com dois PWMs combinados, o sinal é filtrado e preparado para ser enviado para o próximo pedal ou o amplificador de guitarra.
 
-Portanto, o funcionamento pode ser representado pelas seguintes imagens:
+Portanto, o funcionamento pode ser representado pela seguinte imagen:
 
-<img src="Images/AmpCircuit.png" alt="Funcionamento" width="" height="">
-
-<img src="Images/ComunicationProcess.png" alt="Comunicação" width="1200" height="600">
+<img src="Images/pedal-pi-dsp1.png" alt="Operation" width="" height="">
 
 ### Aplicativo e Painel de Controle
 
@@ -65,33 +64,44 @@ E a seguinte imagem serve como inspiração para a criação do painel de contro
 
 ## Manual de Instalação e Configuração
 
-### Instalação e utilização do Arduino Cloud
+### Instalação e Uso do Node-RED
 
-#### Instalação do Arduino Create Agent:
+#### Utilizando Instalação Local
 
-- Acesse o site oficial do Arduino Cloud em https://create.arduino.cc/.
-- Faça login na sua conta Arduino ou crie uma nova, se necessário.
-- Na página inicial, clique em "Get Started".
-- Siga as instruções para baixar e instalar o Arduino Create Agent, que é necessário para conectar suas placas Arduino ao Arduino Cloud.
-- Depois de instalado, abra o Arduino Create Agent e faça login com suas credenciais do Arduino.
+- Certifique-se de ter o Node.js instalado em seu sistema. Se não tiver, você pode baixar e instalar a partir do site oficial: nodejs.org.
+- Abra um terminal ou prompt de comando e execute o seguinte comando para instalar o Node-RED globalmente:
+- "npm install -g --unsafe-perm node-red"
 
-#### Configuração do Arduino Cloud:
+#### Utilizando Docker
 
-- Com o Arduino Create Agent aberto e logado, conecte sua placa Arduino ao computador utilizando um cabo USB.
-- Abra o navegador da web e acesse o Arduino Web Editor em https://create.arduino.cc/editor.
-- No Arduino Web Editor, clique no ícone de configurações no canto superior direito da tela.
-- Selecione "Arduino Cloud" nas opções de configuração.
-- Selecione a placa Arduino que você está usando na lista de placas suportadas.
-- Siga as instruções para conectar sua placa Arduino ao Arduino Cloud através do Arduino Create Agent. Isso geralmente envolve emparelhar a placa com sua conta Arduino.
+- Se preferir, você também pode usar o Docker para executar o Node-RED:
+- Certifique-se de ter o Docker instalado em seu sistema.
+- Execute o seguinte comando para baixar e executar a imagem do Node-RED:
+- "docker run -it -p 1880:1880 --name mynodered nodered/node-red"
 
-#### Utilização do Arduino Cloud:
+#### Iniciando o Servidor Node-RED:
 
-- Com a placa Arduino conectada ao Arduino Cloud, você pode começar a criar e carregar sketches diretamente do Arduino Web Editor.
-- No Arduino Web Editor, clique em "Novo Sketch" para criar um novo código.
-- Escreva o código do seu sketch na área de edição.
-- Quando estiver pronto para carregar o sketch na placa Arduino, clique no botão "Upload" na barra de ferramentas.
-- O código será compilado e carregado na sua placa Arduino automaticamente.
-- Você pode monitorar a saída serial da placa Arduino diretamente no Arduino Web Editor clicando em "Monitor Serial" na barra de ferramentas.
+- Após instalar o Node-RED, você pode iniciar o servidor executando o seguinte comando no terminal:
+- "node-red"
+- Se estiver usando Docker, o servidor Node-RED já estará em execução após o comando docker run.
+
+#### Acessando a Interface Web do Node-RED:
+- Abra um navegador da web e vá para o seguinte endereço:
+- "http://localhost:1880"
+- Se estiver executando o Node-RED em uma máquina remota, substitua localhost pelo endereço IP da máquina.
+
+#### Criando e Editando Fluxos:
+
+- Na interface do Node-RED, você verá um ambiente de desenvolvimento visual onde pode criar e editar fluxos.
+
+- Adicionando Nós: Arraste e solte nós da barra lateral para a área de trabalho. Existem nós para interagir com dispositivos físicos, serviços da web, bancos de dados e muito mais.
+- Conectando Nós: Conecte nós arrastando uma linha entre portas de entrada e saída. Isso define o fluxo de dados entre os nós.
+- Configurando Nós: Dê um duplo clique em um nó para abrir suas configurações. Aqui você pode inserir informações como endereços IP, chaves de API e outras opções relevantes.
+- Depurando e Testando: Use o recurso de depuração integrado para monitorar o fluxo de dados e verificar se tudo está funcionando conforme o esperado.
+
+#### Implantação do Fluxo:
+
+- Quando estiver satisfeito com seu fluxo, clique no botão "Deploy" no canto superior direito da interface. Isso salvará suas alterações e implantará o fluxo para execução.
 
 ### Instalação e utilização do Godot Engine
 
