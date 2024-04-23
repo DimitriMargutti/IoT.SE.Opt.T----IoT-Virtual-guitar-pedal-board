@@ -26,30 +26,29 @@ Where we have:
 - Analog stages using MCP6002 rail-to-rail operational amplifier.
 - ADC: 12 bits / Sampling Rate 50Ksps (MCP3202).
 - Output Stage: 12 bits (2x6bits PWMs running in parallel)
-- Pi Zero:
-    - 1GHz ARM11 core.
-    - 512MB of LPDDR2 SDRAM.
-    - Micro-SD card slot.
+- Pi 4:
+
+<img src="Images/Pi4.png" alt="Components" width="600" height="600">
+<img src="Images/EspecificationPI4.png" alt="Components" width="600" height="400">
+ 
 - Connectors:
     - Input Jack, 1/4 inch unbalanced, Zin=0.5MΩ.
     - Output Jack, 1/4 inch unbalanced, Zout=100Ω.
-    - Power supply: power taken from the Pi Zero board (micro-USB).
+    - Power supply: power taken from the Pi 4 board (micro-USB).
 
 <img src="Images/Components.png" alt="Components" width="600" height="600">
 
-### Operation
+### Operation strategy 
 
-- The Input Stage: Amplifies and filters the guitar signal making it ready for the ADC (Analog to Digital Converter). The ADC sends the signal to the PI ZERO using SPI communication.
+- The Input Stage: Amplifies and filters the guitar signal making it ready for the ADC (Analog to Digital Converter). The ADC sends the signal to the PI 4 using SPI communication.
   
-- Pi ZERO: It takes the digitalized audio waveform from the ADC and does all the Digital Signal Processing (DSP) creating effects (distortion, fuzz, delay, echo, tremolo...) that, in turn, must be pre-selected from the dashboard in the user's mobile application. From the user's selection, the application establishes communication with the board through Web socket.
+- Pi 4: It takes the digitalized audio waveform from the ADC and does all the Digital Signal Processing (DSP) creating effects (distortion, fuzz, delay, echo, tremolo...) that, in turn, must be pre-selected from the dashboard in the user's mobile application. From the user's selection, the application establishes communication with the board through MQTT.
   
-- The Output Stage: Once the new digital waveform is created, the Pi Zero creates an analog signal with two PWMs combined, the signal is filtered and prepared to be sent to the next pedal or the guitar amp.
+- The Output Stage: Once the new digital waveform is created, the Pi 4 creates an analog signal with two PWMs combined, the signal is filtered and prepared to be sent to the next pedal or the guitar amp.
   
-Therefore, the operation can be represented by the following images:
+Therefore, the operation can be represented by the following image:
 
 <img src="Images/pedal-pi-dsp1.png" alt="Operation" width="" height="">
-
-<img src="Images/ComunicationProcess.png" alt="Comunication" width="1200" height="600">
 
 ### Application and Dashboard
 
@@ -65,33 +64,44 @@ And the following image serves as inspiration for the creation of the dashboard:
 
 ## Installation and Configuration Manual
 
-### Installation and use of Arduino Cloud
+### Installation and use of NodeRed
 
-#### Arduino Create Agent Installation:
+#### Using local installation
 
-- Access the official Arduino Cloud website at https://create.arduino.cc/.
-- Log in to your Arduino account or create a new one if necessary.
-- On the homepage, click on "Get Started".
-- Follow the instructions to download and install the Arduino Create Agent, which is necessary to connect Arduino boards to the Arduino Cloud.
-- After installation, open the Arduino Create Agent and log in with your Arduino credentials.
+- Make sure you have Node.js installed on your system. If not, you can download and install it from the official website: nodejs.org.
+- Open a terminal or command prompt and run the following command to install Node-RED globally:
+- "npm install -g --unsafe-perm node-red"
 
-#### Arduino Cloud Configuration:
+#### Using Docker
 
-- With the Arduino Create Agent open and logged in, connect your Arduino board to the computer using a USB cable.
-- Open the web browser and access the Arduino Web Editor at https://create.arduino.cc/editor.
-- In the Arduino Web Editor, click on the settings icon in the upper right corner of the screen.
-- Select "Arduino Cloud" in the configuration options.
-- Select the Arduino board you are using from the list of supported boards.
-- Follow the instructions to connect your Arduino board to the Arduino Cloud through the Arduino Create Agent. This usually involves pairing the board with your Arduino account.
+- If you prefer, you can also use Docker to run Node-RED:
+- Make sure you have Docker installed on your system.
+- Run the following command to download and run the Node-RED image:
+- "docker run -it -p 1880:1880 --name mynodered nodered/node-red"
 
-#### Using Arduino Cloud:
+#### Starting the Node-RED Server:
 
-- With the Arduino board connected to the Arduino Cloud, you can start creating and uploading sketches directly from the Arduino Web Editor.
-- In the Arduino Web Editor, click on "New Sketch" to create a new code.
-- Write the code of your sketch in the editing area.
-- When ready to upload the sketch to the Arduino board, click on the "Upload" button in the toolbar.
-- The code will be compiled and uploaded to the Arduino board automatically.
-- You can monitor the serial output of the Arduino board directly in the Arduino Web Editor by clicking on "Serial Monitor" in the toolbar.
+- After installing Node-RED, you can start the server by running the following command in the terminal:
+- "node-red"
+- If you're using Docker, the Node-RED server will already be running after the docker run command.
+
+#### Accessing the Node-RED Web Interface:
+- Open a web browser and go to the following address:
+- "http://localhost:1880"
+- If you're running Node-RED on a remote machine, replace localhost with the IP address of the machine.
+
+#### Creating and Editing Flows:
+
+- In the Node-RED interface, you'll see a visual development environment where you can create and edit flows.
+
+- Adding Nodes: Drag and drop nodes from the sidebar to the workspace. There are nodes for interacting with physical devices, web services, databases, and more.
+- Connecting Nodes: Connect nodes by dragging a line between input and output ports. This defines the flow of data between nodes.
+- Configuring Nodes: Double-click on a node to open its settings. Here you can enter information such as IP addresses, API keys, and other relevant options.
+Debugging and Testing: Use the built-in debugging feature to monitor the flow of data and verify that everything is working as expected.
+
+#### Deploying the Flow:
+
+- When you're satisfied with your flow, click the "Deploy" button in the top-right corner of the interface. This will save your changes and deploy the flow for execution.
 
 ### Installation and Use of Godot Engine
 
