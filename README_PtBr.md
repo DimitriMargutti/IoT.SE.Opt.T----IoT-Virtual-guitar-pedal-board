@@ -18,7 +18,7 @@ A Pedaleira Virtual para Guitarras surge da necessidade de proporcionar aos guit
 
 A arquitetura principal do projeto utiliza o seguinte esquema:
 
-<img src="Images/MainCircuit.png" alt="Arquitetura" width="" height="">
+<img src="Images/MainCircuit.png" alt="Architecture" style="width: 1000px; height: auto;">
 
 Onde tem-se:
 
