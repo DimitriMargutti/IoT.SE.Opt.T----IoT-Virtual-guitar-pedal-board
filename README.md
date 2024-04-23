@@ -47,7 +47,7 @@ Where we have:
   
 Therefore, the operation can be represented by the following images:
 
-<img src="Images/AmpCircuit.png" alt="Operation" width="" height="">
+<img src="Images/pedal-pi-dsp1.png" alt="Operation" width="" height="">
 
 <img src="Images/ComunicationProcess.png" alt="Comunication" width="1200" height="600">
 
