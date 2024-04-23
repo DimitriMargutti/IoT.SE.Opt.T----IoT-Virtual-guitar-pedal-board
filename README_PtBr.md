@@ -18,7 +18,7 @@ A Pedaleira Virtual para Guitarras surge da necessidade de proporcionar aos guit
 
 A arquitetura principal do projeto utiliza o seguinte esquema:
 
-![Arquitetura](Images/MainCircuit.png)
+<img src="Images/MainCircuit.png" alt="Arquitetura" width="" height="">
 
 Onde tem-se:
 
@@ -35,7 +35,7 @@ Onde tem-se:
     - Jack de saída, 1/4 polegadas desbalanceado, Zout=100Ω.
     - Fonte de alimentação: energia retirada da placa Pi Zero (micro-USB).
 
-![Componentes](Images/Components.png)
+<img src="Images/Components.png" alt="Componentes" width="600" height="600">
 
 ### Funcionamento
 
@@ -47,9 +47,9 @@ Onde tem-se:
 
 Portanto, o funcionamento pode ser representado pelas seguintes imagens:
 
-![Funcionamento](Images/AmpCircuit.png)
+<img src="Images/AmpCircuit.png" alt="Funcionamento" width="" height="">
 
-![Comunicação](Images/ComunicationProcess.png)
+<img src="Images/ComunicationProcess.png" alt="Comunicação" width="1200" height="600">
 
 ### Aplicativo e Painel de Controle
 
@@ -57,11 +57,11 @@ Para a criação do aplicativo, pretende-se utilizar o software Godot, amplament
 
 Segue uma imagem conceitual da tela de login:
 
-![Tela de Login](Images/loginScreenConceptualImage.jpg)
+<img src="Images/loginScreenConceptualImage.jpg" alt="Descrição da Imagem" width="600" height="400">
 
 E a seguinte imagem serve como inspiração para a criação do painel de controle:
 
-![Painel de Controle](Images/DashboardInspiration.png)
+<img src="Images/DashboardInspiration.png" alt="Dashboard" width="" height="">
 
 ## Manual de Instalação e Configuração
 
