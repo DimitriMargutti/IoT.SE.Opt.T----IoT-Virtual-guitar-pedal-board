@@ -1,0 +1,19 @@
+env = SConscript('godot-cpp/SConstruct')
+
+env.Append(CPPPATH = ["src/", "portaudio/include/"])
+
+if env["platform"] == "linux":
+	env["CC"] = "aarch64-linux-gnu-gcc"
+	env["CXX"] = "aarch64-linux-gnu-g++"
+	env.Append(LIBS=['libportaudio','rt','libasound', 'libjack','pthread'])
+	env.Append(LIBPATH=["portaudio/lib_2/", "alsa/usr/lib/", "jack/build/lib"])
+elif env["platform"] == "windows":
+	env.Append(LIBS=['portaudio_x64'])
+	env.Append(LIBPATH=["portaudio/lib/Dynamic/"])
+
+
+src = Glob("src/*.cxx")
+
+libpath = 'libs/libiot_pedal{}{}'.format( env['suffix'], env['SHLIBSUFFIX'])
+sharedlib = env.SharedLibrary(libpath, src)
+Default(sharedlib)

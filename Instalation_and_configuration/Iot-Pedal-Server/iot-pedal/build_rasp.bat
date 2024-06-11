@@ -1,0 +1,1 @@
+python3 -m SCons platform=linux target=template_debug arch=arm64
