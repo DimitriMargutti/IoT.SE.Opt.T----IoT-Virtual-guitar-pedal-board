@@ -1,4 +1,4 @@
-# IoT.SE.Opt.T - Pedalboard Virtual para Guitarras (Virtual guitar pedal board)
+# IoT.SE.Opt.T - IoT Pedalboard Virtual para Guitarras (Virtual guitar pedal board)
 
 ## Visão Geral:
 
