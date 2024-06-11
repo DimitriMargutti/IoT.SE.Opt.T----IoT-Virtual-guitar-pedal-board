@@ -2,128 +2,130 @@
 
 ## Project Overview:
 
-A Pedaleira Virtual para Guitarras foi desenvolvida para atender à necessidade de oferecer aos guitarristas uma solução prática e versátil para experimentar e criar efeitos sonoros, eliminando a dependência de equipamentos físicos volumosos e caros. Com esta pedaleira virtual, os músicos têm a liberdade de explorar uma vasta gama de efeitos de guitarra diretamente em seus computadores. Isso simplifica e enriquece o processo de composição, prática e gravação de músicas, permitindo que os guitarristas ajustem e personalizem seus sons de maneira intuitiva e eficiente. Além disso, a pedaleira virtual proporciona um ambiente ideal para testar novas ideias e configurações de efeitos, ajudando a inspirar a criatividade musical.
+The Virtual Guitar Pedalboard was developed to meet the need to provide guitarists with a practical and versatile solution to experiment with and create sound effects, eliminating the dependence on bulky and expensive physical equipment. With this virtual pedalboard, musicians have the freedom to explore a wide range of guitar effects directly on their computers. This simplifies and enriches the process of composing, practicing, and recording music, allowing guitarists to adjust and customize their sounds intuitively and efficiently. Additionally, the virtual pedalboard provides an ideal environment for testing new ideas and effect configurations, helping to inspire musical creativity.
 
 ## Motivation for the Project
 
-A Pedaleira Virtual para Guitarras nasceu da necessidade de proporcionar aos guitarristas uma solução inovadora e acessível para explorar e criar efeitos sonoros de alta qualidade sem depender de equipamentos físicos caros e volumosos. Os guitarristas, sejam iniciantes ou profissionais, frequentemente enfrentam desafios ao tentar encontrar e combinar diversos pedais e equipamentos para obter os sons desejados. Isso não só demanda um investimento financeiro significativo, mas também pode ser logisticamente complicado, especialmente durante viagens ou apresentações ao vivo.
+The Virtual Guitar Pedalboard was born out of the need to provide guitarists with an innovative and affordable solution to explore and create high-quality sound effects without relying on expensive and bulky physical equipment. Guitarists, whether beginners or professionals, often face challenges when trying to find and combine various pedals and equipment to achieve desired sounds. This not only demands a significant financial investment but can also be logistically complicated, especially during travel or live performances.
 
-Com a Pedaleira Virtual, buscamos resolver esses problemas oferecendo uma plataforma digital que permite aos músicos acessar uma ampla gama de efeitos de guitarra diretamente de seus computadores. Nossa solução facilita o processo de composição, prática e gravação, permitindo que os guitarristas ajustem e personalizem seus sons com facilidade e precisão. Além disso, a pedaleira virtual é ideal para experimentação, incentivando a criatividade e a inovação musical. Os guitarristas podem testar novas combinações de efeitos e configurações sem limitações físicas, ajudando-os a descobrir novos sons e estilos.
+With the Virtual Guitar Pedalboard, we aim to solve these problems by offering a digital platform that allows musicians to access a wide range of guitar effects directly from their computers. Our solution simplifies the process of composing, practicing, and recording, allowing guitarists to adjust and customize their sounds with ease and precision. Additionally, the virtual pedalboard is ideal for experimentation, encouraging musical creativity and innovation. Guitarists can test new effect combinations and settings without physical limitations, helping them discover new sounds and styles.
 
-Em suma, a motivação para criar a Pedaleira Virtual para Guitarras é fornecer aos músicos uma ferramenta poderosa, flexível e acessível que eleve suas habilidades e expanda suas possibilidades criativas, tudo isso enquanto elimina as barreiras impostas pelos equipamentos tradicionais.
+In summary, the motivation to create the Virtual Guitar Pedalboard is to provide musicians with a powerful, flexible, and affordable tool that enhances their skills and expands their creative possibilities, all while eliminating the barriers imposed by traditional equipment.
 
 ## Objectives of the Project
 
-- Proporcionar uma Experiência Completa e Intuitiva:
-  - Desenvolver uma aplicação virtual que oferece uma experiência de pedaleira de guitarra completa e intuitiva, permitindo que os usuários naveguem e utilizem facilmente os diversos recursos e efeitos disponíveis.
+- Provide a Complete and Intuitive Experience:
+  - Develop a virtual application that offers a complete and intuitive guitar pedalboard experience, allowing users to navigate and easily use the various features and effects available.
 
-- Variedade de Efeitos Sonoros:
-  - Permitir aos usuários experimentar uma ampla gama de efeitos sonoros, incluindo distorção, delay, reverb, chorus, entre outros, possibilitando a criação de sons únicos e personalizados para cada estilo musical.
+- Variety of Sound Effects:
+  - Allow users to experience a wide range of sound effects, including distortion, delay, reverb, chorus, among others, enabling the creation of unique and customized sounds for each musical style.
 
-- Criação e Personalização de Presets:
-  - Facilitar a criação e personalização de presets de efeitos, permitindo que os guitarristas ajustem os parâmetros de acordo com diferentes estilos musicais e preferências individuais, armazenando configurações para fácil acesso e reutilização.
+- Creation and Customization of Presets:
+  - Facilitate the creation and customization of effect presets, allowing guitarists to adjust parameters according to different musical styles and individual preferences, storing settings for easy access and reuse.
 
-- Funcionalidades Avançadas:
-  - Integrar funcionalidades avançadas, como simulações de amplificadores e modelagem de gabinetes, proporcionando uma experiência sonora mais autêntica e realista, que se aproxima dos equipamentos físicos tradicionais.
+- Advanced Features:
+  - Integrate advanced features, such as amplifier simulations and cabinet modeling, providing a more authentic and realistic sound experience that approaches traditional physical equipment.
 
-- Plataforma Flexível e de Código Aberto:
-  - Fornecer uma plataforma flexível e de código aberto que permite futuras expansões e colaborações da comunidade de músicos e desenvolvedores, incentivando a inovação contínua e a melhoria do software através de contribuições comunitárias.
+- Flexible and Open-Source Platform:
+  - Provide a flexible and open-source platform that allows for future expansions and collaborations from the community of musicians and developers, encouraging continuous innovation and software improvement through community contributions.
 
 ## Architecture and Communication Protocols
 
-A Pedaleira Virtual para Guitarras utiliza uma arquitetura baseada em comunicação via WebSocket, permitindo uma interação eficiente e em tempo real entre o usuário e o sistema. A seguir, descrevemos os principais componentes e o fluxo de funcionamento do projeto:
+The Virtual Guitar Pedalboard uses an architecture based on WebSocket communication, allowing efficient and real-time interaction between the user and the system. Below, we describe the main components and the operation flow of the project:
 
-- Conexão da Guitarra ao Computador:
-  - O usuário conecta a guitarra a um dispositivo de interface de áudio, conhecido como Guitar Link, que está conectado ao computador. O Guitar Link converte o sinal analógico da guitarra em um formato digital que pode ser processado pela aplicação.
- 
-<img src="Images/Guitarlink.png" alt="Architecture">
+- Guitar Connection to the Computer:
+  - The user connects the guitar to an audio interface device, known as Guitar Link, which is connected to the computer. The Guitar Link converts the guitar's analog signal into a digital format that can be processed by the application.
+    
+ <img src="Images/Guitarlink.png" alt="Architecture">
 
-| **Características**                                                                                             | **Descrição**                                                                                                                                                          |
+| **Features**                                                                                             | **Description**                                                                                                                                                          |
 |---------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Saída Adicional                                                                                               | P10 para fone de ouvido estéreo ou para monitoramento com alto-falantes ativos (caixas).                                                                             |
-| Compatibilidade                                                                                               | Trabalha diretamente com PC ou MAC, acompanha CD de instalação.                                                                                                      |
-| Durabilidade                                                                                                  | Componentes de alta qualidade que garantem a durabilidade.                                                                                                           |
-| Alimentação USB                                                                                               | Porta USB não necessita de alimentação externa.                                                                                                                      |
-| Instalação                                                                                                    | Fácil instalação (PLUG and PLAY).                                                                                                                                    |
-| Interface USB                                                                                                | Guitar Link é um dispositivo com interface USB que permite conectar facilmente sua guitarra ao PC para um trabalho profissional de amplificação, gravação e edição.  |
-| Efeitos                                                                                                       | Uso dos efeitos clássicos em estúdio bem como no palco.                                                                                                              |
-| Gravação e Edição                                                                                            | Gravação digital e edição de alta qualidade.                                                                                                                          |
-| Reprodução de Arquivos                                                                                       | Reprodução de arquivos MP3, WAV, AIFF.                                                                                                                               |
-| Compatibilidade com Sistemas Operacionais                                                                    | Compatível com Mac OS e Windows XP/Vista/7/8.                                                                                                                        |
-| Reprodução em Tempo Real                                                                                      | Reprodução em tempo real sem latência/atraso na reprodução.                                                                                                           |
-| Qualidade de Áudio                                                                                           | Som estéreo para fones de ouvido, qualidade de áudio 16-bit, 44.1/48kHz.                                                                                              |
+| Additional Output                                                                                               | P10 for stereo headphone or for monitoring with active speakers (boxes).                                                                             |
+| Compatibility                                                                                               | Works directly with PC or MAC, comes with installation CD.                                                                                                      |
+| Durability                                                                                                  | High-quality components that guarantee durability.                                                                                                           |
+| USB Power                                                                                               | USB port does not require external power.                                                                                                                      |
+| Installation                                                                                                    | Easy installation (PLUG and PLAY).                                                                                                                                    |
+| USB Interface                                                                                                | Guitar Link is a USB interface device that allows you to easily connect your guitar to your PC for professional amplification, recording, and editing work.  |
+| Effects                                                                                                       | Use of classic effects in studio as well as on stage.                                                                                                              |
+| Recording and Editing                                                                                            | Digital recording and high-quality editing.                                                                                                                          |
+| File Playback                                                                                       | Playback of MP3, WAV, AIFF files.                                                                                                                               |
+| Operating System Compatibility                                                                    | Compatible with Mac OS and Windows XP/Vista/7/8.                                                                                                                        |
+| Real-time Playback                                                                                      | Real-time playback without latency/delay.                                                                                                           |
+| Audio Quality                                                                                           | Stereo sound for headphones, audio quality 16-bit, 44.1/48kHz.                                                                                              |
 
 
-- Biblioteca de Áudio e Engine de Processamento:
-  - No computador, uma biblioteca de áudio dedicada recebe o sinal digital da guitarra. Esta biblioteca é responsável por capturar e preparar o áudio para processamento. Em seguida, a engine de efeitos de áudio entra em ação, pronta para aplicar os efeitos selecionados pelo usuário.
+- Audio Library and Processing Engine:
+  - On the computer, a dedicated audio library receives the guitar's digital signal. This library is responsible for capturing and preparing the audio for processing. Then, the audio effects engine comes into action, ready to apply the effects selected by the user.
 
-- Aplicação Cliente no Celular:
-  - O usuário interage com a Pedaleira Virtual através de uma aplicação cliente no celular. Esta aplicação oferece uma interface intuitiva para selecionar, configurar e ajustar os efeitos desejados.
+- Client Application on Mobile:
+  - The user interacts with the Virtual Pedalboard through a client application on their mobile device. This application provides an intuitive interface for selecting, configuring, and adjusting desired effects.
 
-- Comunicação via WebSocket:
-  - A aplicação cliente no celular se comunica com o servidor no computador usando WebSockets. Esta tecnologia permite uma comunicação bidirecional em tempo real, essencial para garantir que as alterações de efeitos feitas pelo usuário sejam aplicadas instantaneamente.
+- Communication via WebSocket:
+  - The client application on the mobile device communicates with the server on the computer using WebSockets. This technology allows for bidirectional real-time communication, essential to ensure that effect changes made by the user are applied instantly.
 
-- Aplicação dos Efeitos:
-  - Quando o usuário seleciona e configura os efeitos na aplicação do celular, essas configurações são enviadas ao servidor através do WebSocket. O servidor, por sua vez, aplica os efeitos recebidos ao áudio da guitarra em tempo real, utilizando a engine de processamento de áudio.
+- Application of Effects:
+  - When the user selects and configures the effects in the mobile application, these settings are sent to the server via WebSocket. The server, in turn, applies the received effects to the guitar audio in real-time, using the audio processing engine.
 
-- Retorno do Áudio Processado:
-  - Após a aplicação dos efeitos, o áudio processado é devolvido ao cliente. O usuário então ouve o som da guitarra com os efeitos aplicados diretamente em seu dispositivo, permitindo um feedback imediato e uma experiência de uso contínua e sem latência perceptível.
+- Processed Audio Feedback:
+  - After the application of effects, the processed audio is returned to the client. The user then hears the guitar sound with the effects applied directly on their device, allowing for immediate feedback and a continuous, latency-free user experience.
 
 <img src="Images/Architecture.png" alt="Architecture">
 
-### Benefícios da Arquitetura
-- Interatividade em Tempo Real: A comunicação via WebSocket garante que as mudanças feitas na aplicação cliente sejam refletidas imediatamente no áudio processado.
-- Flexibilidade e Personalização: Os usuários podem personalizar uma vasta gama de efeitos diretamente do celular, ajustando parâmetros em tempo real conforme suas necessidades e preferências.
-- Integração Simples: O uso de um Guitar Link simplifica a conexão da guitarra ao sistema, tornando a configuração acessível tanto para iniciantes quanto para profissionais.
-- Experiência Autêntica: A engine de processamento de áudio no computador aplica os efeitos com alta fidelidade, proporcionando uma experiência sonora autêntica que se aproxima da utilização de equipamentos físicos tradicionais.
-  
-Essa arquitetura moderna e eficiente não só atende às necessidades práticas dos guitarristas, como também abre caminho para futuras expansões e melhorias, mantendo a flexibilidade e a colaboração aberta como pilares fundamentais do projeto.
+### Architecture Benefits
+- Real-time Interactivity: WebSocket communication ensures that changes made in the client application are immediately reflected in the processed audio.
+- Flexibility and Customization: Users can customize a wide range of effects directly from their mobile devices, adjusting parameters in real-time according to their needs and preferences.
+- Simple Integration: The use of a Guitar Link simplifies the connection of the guitar to the system, making the setup accessible for both beginners and professionals.
+- Authentic Experience: The audio processing engine on the computer applies effects with high fidelity, providing an authentic sound experience that approaches the use of traditional physical equipment.
+
+This modern and efficient architecture not only meets the practical needs of guitarists but also paves the way for future expansions and improvements, maintaining flexibility and open collaboration as fundamental pillars of the project.
+
 ## Dashboard
 
 <img src="Images/d1.png" alt="d1">
 
-- Título da Dashboard:
-  - O texto “START CLIENT SEND TEST PACKET” está no topo da tela.
-- Status do Cliente:
-  - Logo abaixo do título, há uma linha que diz “CLIENT STATUS CONECTADO ID# 78829240”. Isso indica que o cliente está conectado e possui um ID específico.
-- Opção “ADD EFFECT”:
-  - Na parte inferior da tela, há um botão ou opção chamado “ADD EFFECT”. Isso sugere que o usuário pode adicionar algum efeito ou camada ao aplicativo.
+- Dashboard Title:
+  - The text “START CLIENT SEND TEST PACKET” is at the top of the screen.
+- Client Status:
+  - Below the title, there is a line that says “CLIENT STATUS CONNECTED ID# 78829240”. This indicates that the client is connected and has a specific ID.
+- “ADD EFFECT” Option:
+  - At the bottom of the screen, there is a button or option called “ADD EFFECT”. This suggests that the user can add some effect or layer to the application.
 
 <img src="Images/d2.png" alt="d2">
  
-Após selecionar a opção “ADD EFFECT”, você provavelmente verá uma tela com diferentes tipos de efeitos de áudio para aplicar à sua pedaleira virtual de guitarra. Aqui estão algumas possíveis opções que podem aparecer:
+After selecting the “ADD EFFECT” option, you will likely see a screen with different types of audio effects to apply to your virtual guitar pedalboard. Here are some possible options that may appear:
 
-- Delay (Atraso):
-  - O efeito de delay adiciona repetições do som da guitarra, criando um efeito de eco. Você pode ajustar o tempo entre as repetições e a quantidade de feedback.
-- Overdrive (Saturação):
-  - O overdrive é usado para adicionar distorção suave ao som da guitarra, dando-lhe um timbre mais quente e “sujinho”.
-- Reverb (Reverberação):
-  - O reverb simula o som de tocar em diferentes ambientes, adicionando profundidade e ambiente ao som da guitarra.
+- Delay:
+  - The delay effect adds repetitions of the guitar sound, creating an echo effect. You can adjust the time between repetitions and the amount of feedback.
+- Overdrive:
+  - Overdrive is used to add gentle distortion to the guitar sound, giving it a warmer and “grittier” tone.
+- Reverb:
+  - Reverb simulates the sound of playing in different environments, adding depth and ambiance to the guitar sound.
  
 <img src="Images/d3.png" alt="d3">
  
-Se a opção “Reverb” for selecionada, você poderá ajustar as configurações de reverberação para dar à guitarra um som mais espaçoso e ambiental. Aqui estão algumas opções que você pode encontrar:
+If the “Reverb” option is selected, you can adjust the reverb settings to give the guitar a more spacious and ambient sound. Here are some options you may encounter:
 
-A interface exibe duas seções relacionadas a efeitos de áudio:
+The interface displays two sections related to audio effects:
 
-- Reverb (Reverberação):
-  - A seção “REVERB” está ativa, indicando que o efeito de reverberação está sendo aplicado.
-  - Há uma opção para “REMOVE EFFECT”, que permite desativar o reverb.
-- Tamanho da Sala (ROOM SIZE):
-  - O parâmetro está definido como “0.8” que controla o tamanho simulado da sala para o efeito de reverberação.
+- Reverb:
+  - The “REVERB” section is active, indicating that the reverb effect is being applied.
+  - There is an option for “REMOVE EFFECT”, which allows you to deactivate the reverb.
+- Room Size:
+  - The parameter is set to “0.8” which controls the simulated room size for the reverb effect.
 
 ## Time to Make the project by yourself
 
-For informations on how to install and configure the app's used in this project, [Click here](https://github.com/DimitriMargutti/IoT.SE.Opt.T---Virtual-guitar-pedal-board/blob/main/Instalation_and_configuration/README.md)
+For information on how to install and configure the apps used in this project, [click here](https://github.com/DimitriMargutti/IoT.SE.Opt.T---Virtual-guitar-pedal-board/blob/main/Instalation_and_configuration/README.md)
 
 ## Mentorship
 
-This project was developed with the mentorship of [Dhiego Fernandes](https://github.com/DhiegoFC/IoT_for_Embedded_Devices) Carvalho professor at State University of São Paulo
+This project was developed with the mentorship of [Dhiego Fernandes](https://github.com/DhiegoFC/IoT_for_Embedded_Devices), a professor at the State University of São Paulo.
 
 ## References
 
-- Documentação: relacionada à inspiração para o projeto:
+- Documentation: related to the project's inspiration:
   - [GDExtension](https://docs.godotengine.org/en/stable/tutorials/scripting/gdextension/index.html)
   - [Godot Engine](https://godotengine.org)
   - [PortAudio](https://github.com/PortAudio/portaudio)
+
   
