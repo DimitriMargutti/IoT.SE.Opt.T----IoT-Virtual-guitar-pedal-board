@@ -1,0 +1,141 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpif28i5mbage"]
+
+[ext_resource type="Script" path="res://SelectEffect.gd" id="1_yj1x8"]
+
+[sub_resource type="Animation" id="Animation_xcgqf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_41s41"]
+resource_name = "demodulate"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_7yvgm"]
+resource_name = "modulate"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_17yb2"]
+_data = {
+"RESET": SubResource("Animation_xcgqf"),
+"demodulate": SubResource("Animation_41s41"),
+"modulate": SubResource("Animation_7yvgm")
+}
+
+[node name="SelectEffect" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yj1x8")
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+alignment = 1
+
+[node name="Return" type="Button" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0, 0, 1)
+text = "Return"
+
+[node name="Delay" type="Button" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Delay"
+
+[node name="Distortion" type="Button" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Distortion
+"
+
+[node name="Reverb" type="Button" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Reverb
+"
+
+[node name="Chorus" type="Button" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Chorus
+"
+
+[node name="PitchShift" type="Button" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Pitch Shift"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_17yb2")
+}
+
+[connection signal="button_down" from="Panel/MarginContainer/ScrollContainer/VBoxContainer/Return" to="." method="_on_return_button_down"]
+[connection signal="button_down" from="Panel/MarginContainer/ScrollContainer/VBoxContainer/Delay" to="." method="_on_delay_button_down"]
+[connection signal="button_down" from="Panel/MarginContainer/ScrollContainer/VBoxContainer/Distortion" to="." method="_on_overdrive_button_down"]
+[connection signal="button_down" from="Panel/MarginContainer/ScrollContainer/VBoxContainer/Reverb" to="." method="_on_reverb_button_down"]
+[connection signal="button_down" from="Panel/MarginContainer/ScrollContainer/VBoxContainer/Chorus" to="." method="_on_chorus_button_down"]
+[connection signal="button_down" from="Panel/MarginContainer/ScrollContainer/VBoxContainer/PitchShift" to="." method="_on_pitch_shift_button_down"]

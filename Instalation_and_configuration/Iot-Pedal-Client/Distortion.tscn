@@ -1,0 +1,134 @@
+[gd_scene load_steps=2 format=3 uid="uid://cos6faf657h0i"]
+
+[ext_resource type="Script" path="res://Distortion.gd" id="1_5hcj8"]
+
+[node name="Distortion" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"Metal"
+script = ExtResource("1_5hcj8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 57
+
+[node name="Distortion" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Distortion"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "Active"
+
+[node name="Remove" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Remove Effect"
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="Prop1" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Mode"
+
+[node name="Prop11" type="OptionButton" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+selected = 0
+popup/item_0/text = "Clip"
+popup/item_0/id = 0
+popup/item_1/text = "Atan"
+popup/item_1/id = 1
+popup/item_2/text = "LoFi"
+popup/item_2/id = 2
+popup/item_3/text = "Overdrive"
+popup/item_3/id = 3
+popup/item_4/text = "Wave Shape"
+popup/item_4/id = 4
+
+[node name="Prop111" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Prop2" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Pre gain: "
+
+[node name="Prop22" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -60.0
+max_value = 60.0
+step = 0.5
+
+[node name="Prop222" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50
+"
+
+[node name="Prop3" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "keep hf hz:"
+
+[node name="Prop33" type="SpinBox" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 20000.0
+value = 16000.0
+
+[node name="Prop333" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "
+"
+
+[node name="Prop4" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Drive"
+
+[node name="Prop44" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+
+[node name="Prop444" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50
+"
+
+[node name="Prop5" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Post Gain:"
+
+[node name="Prop55" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -80.0
+max_value = 24.0
+step = 0.5
+
+[node name="Prop555" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50
+"
+
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/Remove" to="." method="_on_remove_button_down"]
+[connection signal="item_selected" from="VBoxContainer/GridContainer/Prop11" to="." method="_on_prop_11_item_selected"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Prop22" to="." method="_on_prop_22_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Prop33" to="." method="_on_prop_33_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Prop44" to="." method="_on_prop_44_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Prop55" to="." method="_on_prop_55_value_changed"]

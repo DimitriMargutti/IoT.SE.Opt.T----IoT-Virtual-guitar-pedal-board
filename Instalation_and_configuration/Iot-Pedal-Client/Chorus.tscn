@@ -1,0 +1,287 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct7llonlc0114"]
+
+[ext_resource type="Script" path="res://Chorus.gd" id="1_tetf3"]
+
+[node name="Chorus" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"Metal"
+script = ExtResource("1_tetf3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 57
+
+[node name="Chorus" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Chorus"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "Active"
+
+[node name="Remove" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Remove Effect"
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="Prop1" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Dry"
+
+[node name="Prop11" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+
+[node name="Prop111" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50"
+
+[node name="Prop15" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Wet"
+
+[node name="Prop1515" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+
+[node name="Prop151515" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50"
+
+[node name="Separator" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Voice 1"
+
+[node name="Separator2" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Separator3" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Prop2" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Delay (ms)"
+
+[node name="Prop22" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 50.0
+step = 0.01
+
+[node name="Prop222" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50"
+
+[node name="Prop3" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Rate (hz)"
+
+[node name="Prop33" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 20.0
+step = 0.01
+value = 20.0
+
+[node name="Prop333" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50"
+
+[node name="Prop4" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Depth (ms) "
+
+[node name="Prop44" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 20.0
+step = 0.01
+
+[node name="Prop444" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50
+"
+
+[node name="Prop5" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Level (db)"
+
+[node name="Prop55" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -60.0
+max_value = 24.0
+step = 0.01
+
+[node name="Prop555" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50
+"
+
+[node name="Prop6" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Cutoff hz"
+
+[node name="Prop66" type="SpinBox" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 20000.0
+step = 0.01
+
+[node name="Prop666" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "
+"
+
+[node name="Prop7" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Pan"
+
+[node name="Prop77" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -1.0
+max_value = 1.0
+step = 0.01
+
+[node name="Prop777" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50
+"
+
+[node name="Separator4" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Voice 2"
+
+[node name="Separator5" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Separator6" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Prop8" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Delay (ms)"
+
+[node name="Prop88" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 50.0
+step = 0.01
+
+[node name="Prop888" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50"
+
+[node name="Prop9" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Rate (hz)"
+
+[node name="Prop99" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 20.0
+step = 0.01
+value = 20.0
+
+[node name="Prop999" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50"
+
+[node name="Prop10" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Depth (ms) "
+
+[node name="Prop1010" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 20.0
+step = 0.01
+
+[node name="Prop101010" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50
+"
+
+[node name="Prop12" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Level (db)"
+
+[node name="Prop1212" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -60.0
+max_value = 24.0
+step = 0.01
+
+[node name="Prop121212" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50
+"
+
+[node name="Prop13" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Cutoff hz"
+
+[node name="Prop1313" type="SpinBox" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 20000.0
+step = 0.01
+
+[node name="Prop131313" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "
+"
+
+[node name="Prop14" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Pan"
+
+[node name="Prop1414" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -1.0
+max_value = 1.0
+step = 0.01
+
+[node name="Prop141414" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50
+"
+
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/Remove" to="." method="_on_remove_button_down"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Prop11" to="." method="_on_prop_11_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Prop1515" to="." method="_on_prop_1515_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Prop22" to="." method="_on_prop_22_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Prop33" to="." method="_on_prop_33_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Prop44" to="." method="_on_prop_44_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Prop55" to="." method="_on_prop_55_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Prop66" to="." method="_on_prop_66_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Prop77" to="." method="_on_prop_77_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Prop88" to="." method="_on_prop_88_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Prop99" to="." method="_on_prop_99_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Prop1010" to="." method="_on_prop_1010_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Prop1212" to="." method="_on_prop_1212_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Prop1313" to="." method="_on_prop_1313_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Prop1414" to="." method="_on_prop_1414_value_changed"]

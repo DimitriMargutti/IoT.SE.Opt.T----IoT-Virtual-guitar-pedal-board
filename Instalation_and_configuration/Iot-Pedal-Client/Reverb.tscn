@@ -1,0 +1,141 @@
+[gd_scene load_steps=2 format=3 uid="uid://d11yynio280m8"]
+
+[ext_resource type="Script" path="res://Reverb.gd" id="1_iuq54"]
+
+[node name="Reverb" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"Metal"
+script = ExtResource("1_iuq54")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 57
+
+[node name="Reverb" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Reverb"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "Active"
+
+[node name="Remove" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Remove Effect"
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="RoomSize" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Room Size:"
+
+[node name="RoomSize2" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+
+[node name="Value" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50
+"
+
+[node name="Dampling" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Dampling:"
+
+[node name="Dampling2" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+
+[node name="Value2" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50
+"
+
+[node name="Spread" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Spread:"
+
+[node name="Spread2" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+
+[node name="Value3" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50
+"
+
+[node name="HighPass" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "High Pass:"
+
+[node name="HighPass2" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+
+[node name="Value4" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50
+"
+
+[node name="Dry" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Dry:"
+
+[node name="Dry2" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+
+[node name="Value5" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50
+"
+
+[node name="Wet" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Wet:"
+
+[node name="Wet2" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+
+[node name="Value6" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "50
+"
+
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/Remove" to="." method="_on_remove_button_down"]
+[connection signal="drag_ended" from="VBoxContainer/GridContainer/RoomSize2" to="." method="_on_room_size_2_drag_ended"]
+[connection signal="drag_started" from="VBoxContainer/GridContainer/RoomSize2" to="." method="_on_room_size_2_drag_started"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/RoomSize2" to="." method="_on_room_size_2_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Dampling2" to="." method="_on_dampling_2_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Spread2" to="." method="_on_spread_2_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/HighPass2" to="." method="_on_high_pass_2_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Dry2" to="." method="_on_dry_2_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/Wet2" to="." method="_on_wet_2_value_changed"]
