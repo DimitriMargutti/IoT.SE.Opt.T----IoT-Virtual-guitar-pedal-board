@@ -1,10 +1,10 @@
 # IoT.SE.Opt.T - Pedalboard Virtual para Guitarras (Virtual guitar pedal board)
 
-## Project Overview:
+## Visão Geral:
 
 A Pedaleira Virtual para Guitarras foi desenvolvida para atender à necessidade de oferecer aos guitarristas uma solução prática e versátil para experimentar e criar efeitos sonoros, eliminando a dependência de equipamentos físicos volumosos e caros. Com esta pedaleira virtual, os músicos têm a liberdade de explorar uma vasta gama de efeitos de guitarra diretamente em seus computadores. Isso simplifica e enriquece o processo de composição, prática e gravação de músicas, permitindo que os guitarristas ajustem e personalizem seus sons de maneira intuitiva e eficiente. Além disso, a pedaleira virtual proporciona um ambiente ideal para testar novas ideias e configurações de efeitos, ajudando a inspirar a criatividade musical.
 
-## Motivation for the Project
+## Motivação para o projeto
 
 A Pedaleira Virtual para Guitarras nasceu da necessidade de proporcionar aos guitarristas uma solução inovadora e acessível para explorar e criar efeitos sonoros de alta qualidade sem depender de equipamentos físicos caros e volumosos. Os guitarristas, sejam iniciantes ou profissionais, frequentemente enfrentam desafios ao tentar encontrar e combinar diversos pedais e equipamentos para obter os sons desejados. Isso não só demanda um investimento financeiro significativo, mas também pode ser logisticamente complicado, especialmente durante viagens ou apresentações ao vivo.
 
@@ -12,7 +12,7 @@ Com a Pedaleira Virtual, buscamos resolver esses problemas oferecendo uma plataf
 
 Em suma, a motivação para criar a Pedaleira Virtual para Guitarras é fornecer aos músicos uma ferramenta poderosa, flexível e acessível que eleve suas habilidades e expanda suas possibilidades criativas, tudo isso enquanto elimina as barreiras impostas pelos equipamentos tradicionais.
 
-## Objectives of the Project
+## Objetivos do projeto
 
 - Proporcionar uma Experiência Completa e Intuitiva:
   - Desenvolver uma aplicação virtual que oferece uma experiência de pedaleira de guitarra completa e intuitiva, permitindo que os usuários naveguem e utilizem facilmente os diversos recursos e efeitos disponíveis.
@@ -29,7 +29,7 @@ Em suma, a motivação para criar a Pedaleira Virtual para Guitarras é fornecer
 - Plataforma Flexível e de Código Aberto:
   - Fornecer uma plataforma flexível e de código aberto que permite futuras expansões e colaborações da comunidade de músicos e desenvolvedores, incentivando a inovação contínua e a melhoria do software através de contribuições comunitárias.
 
-## Architecture and Communication Protocols
+## Arquitetura e protocolos de comando
 
 A Pedaleira Virtual para Guitarras utiliza uma arquitetura baseada em comunicação via WebSocket, permitindo uma interação eficiente e em tempo real entre o usuário e o sistema. A seguir, descrevemos os principais componentes e o fluxo de funcionamento do projeto:
 
@@ -112,15 +112,15 @@ A interface exibe duas seções relacionadas a efeitos de áudio:
 - Tamanho da Sala (ROOM SIZE):
   - O parâmetro está definido como “0.8” que controla o tamanho simulado da sala para o efeito de reverberação.
 
-## Time to Make the project by yourself
+## Hora de fazer você mesmo!
 
-For informations on how to install and configure the app's used in this project, [Click here](https://github.com/DimitriMargutti/IoT.SE.Opt.T---Virtual-guitar-pedal-board/blob/main/Instalation_and_configuration/README.md)
+Para informações sobre como instalar e configurar os aplicativos utilizados neste projeto [clique aqui](https://github.com/DimitriMargutti/IoT.SE.Opt.T---Virtual-guitar-pedal-board/blob/main/Instalation_and_configuration/README.md)
 
-## Mentorship
+## Mentoria
 
-This project was developed with the mentorship of [Dhiego Fernandes](https://github.com/DhiegoFC/IoT_for_Embedded_Devices) Carvalho professor at State University of São Paulo
+Este projeto foi desenvolvido com a mentoria de [Dhiego Fernandes](https://github.com/DhiegoFC/IoT_for_Embedded_Devices) Carvalho professor at State University of São Paulo
 
-## References
+## Referências
 
 - Documentação: relacionada à inspiração para o projeto:
   - [GDExtension](https://docs.godotengine.org/en/stable/tutorials/scripting/gdextension/index.html)
