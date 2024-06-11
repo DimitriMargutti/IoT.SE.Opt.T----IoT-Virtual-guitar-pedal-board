@@ -33,6 +33,8 @@ Em suma, a motivação para criar a Pedaleira Virtual para Guitarras é fornecer
 
 A Pedaleira Virtual para Guitarras utiliza uma arquitetura baseada em comunicação via WebSocket, permitindo uma interação eficiente e em tempo real entre o usuário e o sistema. A seguir, descrevemos os principais componentes e o fluxo de funcionamento do projeto:
 
+<img src="Images/architecture.png" alt="Architecture">
+
 - Conexão da Guitarra ao Computador:
   - O usuário conecta a guitarra a um dispositivo de interface de áudio, conhecido como Guitar Link, que está conectado ao computador. O Guitar Link converte o sinal analógico da guitarra em um formato digital que pode ser processado pela aplicação.
  
@@ -63,27 +65,27 @@ A Pedaleira Virtual para Guitarras utiliza uma arquitetura baseada em comunicaç
 - Comunicação via WebSocket:
   - A aplicação cliente no celular se comunica com o servidor na Raspberry 4 model B usando WebSockets. Esta tecnologia permite uma comunicação bidirecional em tempo real, essencial para garantir que as alterações de efeitos feitas pelo usuário sejam aplicadas instantaneamente.
  
-<img src="Images/rasp.png" alt="rasp">
- 
-### Raspberry Pi Specifications
+<img src="Images/Rasp.png" alt="rasp">
 
-| Feature                                      | Description                                                                                        |
+### Especificações do Raspberry Pi
+
+| **Características**                                   |**Descrição**                                                                                               |
 |----------------------------------------------|----------------------------------------------------------------------------------------------------|
-| **Processor**                                | Broadcom BCM2711, Quad core Cortex-A72 (ARM v8) 64-bit SoC @ 1.8GHz                                |
-| **Memory**                                   | 1GB, 2GB, 4GB or 8GB LPDDR4-3200 SDRAM (depending on model)                                        |
-| **Wireless**                                 | 2.4 GHz and 5.0 GHz IEEE 802.11ac wireless, Bluetooth 5.0, BLE                                     |
+| **Processador**                              | Broadcom BCM2711, Quad core Cortex-A72 (ARM v8) SoC de 64 bits @ 1,8GHz                            |
+| **Memória**                                  | 1GB, 2GB, 4GB ou 8GB LPDDR4-3200 SDRAM (dependendo do modelo)                                      |
+| **Conectividade Sem Fio**                    | 2,4 GHz e 5,0 GHz IEEE 802.11ac wireless, Bluetooth 5.0, BLE                                       |
 | **Ethernet**                                 | Gigabit Ethernet                                                                                   |
-| **USB Ports**                                | 2 USB 3.0 ports; 2 USB 2.0 ports                                                                   |
-| **GPIO Header**                              | Raspberry Pi standard 40 pin GPIO header (fully backwards compatible with previous boards)         |
-| **Display**                                  | 2 × micro-HDMI® ports (up to 4kp60 supported)                                                      |
-| **MIPI DSI Display Port**                    | 2-lane MIPI DSI display port                                                                       |
-| **MIPI CSI Camera Port**                     | 2-lane MIPI CSI camera port                                                                        |
-| **Audio/Video Port**                         | 4-pole stereo audio and composite video port                                                       |
-| **Video Decode/Encode**                      | H.265 (4kp60 decode), H264 (1080p60 decode, 1080p30 encode)                                         |
-| **Graphics**                                 | OpenGL ES 3.1, Vulkan 1.0                                                                          |
-| **Storage**                                  | Micro-SD card slot for loading operating system and data storage                                   |
-| **Power Supply**                             | 5V DC via USB-C connector (minimum 3A*), 5V DC via GPIO header (minimum 3A*), Power over Ethernet (PoE) enabled (requires separate PoE HAT) |
-| **Operating Temperature**                    | 0 – 50 degrees C ambient                                                                           |
+| **Portas USB**                               | 2 portas USB 3.0; 2 portas USB 2.0                                                                 |
+| **Header GPIO**                              | Conector GPIO padrão de 40 pinos do Raspberry Pi (totalmente compatível com versões anteriores)    |
+| **Display**                                  | 2 portas micro-HDMI® (suporta até 4kp60)                                                           |
+| **Porta de Display MIPI DSI**                | Porta de display MIPI DSI de 2 pistas                                                              |
+| **Porta de Câmera MIPI CSI**                 | Porta de câmera MIPI CSI de 2 pistas                                                               |
+| **Porta de Áudio/Vídeo**                     | Porta de áudio estéreo de 4 polos e vídeo composto                                                 |
+| **Decodificação/Codificação de Vídeo**       | H.265 (decodificação 4kp60), H264 (decodificação 1080p60, codificação 1080p30)                      |
+| **Gráficos**                                 | OpenGL ES 3.1, Vulkan 1.0                                                                          |
+| **Armazenamento**                            | Slot para cartão Micro-SD para carregar sistema operacional e armazenamento de dados               |
+| **Fonte de Alimentação**                     | 5V DC via conector USB-C (mínimo 3A*), 5V DC via header GPIO (mínimo 3A*), Power over Ethernet (PoE) habilitado (requer PoE HAT separado) |
+| **Temperatura de Operação**                  | 0 – 50 graus C ambiente                                                                            |
 
 
 - Aplicação dos Efeitos:
@@ -91,8 +93,6 @@ A Pedaleira Virtual para Guitarras utiliza uma arquitetura baseada em comunicaç
 
 - Retorno do Áudio Processado:
   - Após a aplicação dos efeitos, o áudio processado é devolvido ao cliente. O usuário então ouve o som da guitarra com os efeitos aplicados diretamente em seu dispositivo, permitindo um feedback imediato e uma experiência de uso contínua e sem latência perceptível.
-
-<img src="Images/architecture.png" alt="Architecture">
 
 ### Benefícios da Arquitetura
 - Interatividade em Tempo Real: A comunicação via WebSocket garante que as mudanças feitas na aplicação cliente sejam refletidas imediatamente no áudio processado.
@@ -105,35 +105,52 @@ Essa arquitetura moderna e eficiente não só atende às necessidades práticas 
 
 <img src="Images/D1.png" alt="d1">
 
-- Título da Dashboard:
-  - O texto “START CLIENT SEND TEST PACKET” está no topo da tela.
+- Botões de Conexão:
+  - No topo da tela, você verá dois botões: “CONNECT” e “DISCONNECT”. Você pode usar esses botões para se conectar ou desconectar de um servidor ou serviço.
 - Status do Cliente:
-  - Logo abaixo do título, há uma linha que diz “CLIENT STATUS CONECTADO ID# 78829240”. Isso indica que o cliente está conectado e possui um ID específico.
-- Opção “ADD EFFECT”:
-  - Na parte inferior da tela, há um botão ou opção chamado “ADD EFFECT”. Isso sugere que o usuário pode adicionar algum efeito ou camada ao aplicativo.
-
+  - Logo abaixo dos botões de conexão, há uma mensagem que mostra o status atual da sua conexão. Se você estiver conectado, dirá “CLIENT STATUS: CONNECTED”. Se você estiver desconectado, dirá “CLIENT STATUS: DISCONNECTED”.
+- Endereços de Web Socket:
+  - Abaixo do status do cliente, há dois endereços de web socket. Esses são os endereços que o aplicativo usará para se conectar ao servidor ou serviço.
+- Adicionar Efeito:
+  - Na parte inferior da tela, há um botão “ADD EFFECT”. Este botão permite adicionar efeitos especiais à sua conexão.
+    
 <img src="Images/D2.png" alt="d2">
  
 Após selecionar a opção “ADD EFFECT”, você provavelmente verá uma tela com diferentes tipos de efeitos de áudio para aplicar à sua pedaleira virtual de guitarra. Aqui estão algumas possíveis opções que podem aparecer:
 
-- Delay (Atraso):
-  - O efeito de delay adiciona repetições do som da guitarra, criando um efeito de eco. Você pode ajustar o tempo entre as repetições e a quantidade de feedback.
-- Overdrive (Saturação):
-  - O overdrive é usado para adicionar distorção suave ao som da guitarra, dando-lhe um timbre mais quente e “sujinho”.
-- Reverb (Reverberação):
-  - O reverb simula o som de tocar em diferentes ambientes, adicionando profundidade e ambiente ao som da guitarra.
- 
+- DELAY:
+  - Este é um efeito que reproduz um som que foi gravado e o toca novamente após um período de tempo. Isso cria um efeito de eco.
+- DISTORTION:
+  - Este é um efeito que altera o som de uma maneira que o torna mais áspero ou mais duro. É comumente usado em música de rock para criar um som de guitarra mais pesado.
+- REVERB:
+  - Este é um efeito que simula o som de um ambiente específico, como uma sala grande ou uma caverna. Isso dá ao som uma sensação de espaço e profundidade.
+- CHORUS:
+  - Este é um efeito que faz com que o som pareça como se várias pessoas estivessem tocando ou cantando ao mesmo tempo. Isso cria um som mais completo e rico.
+- PITCH SHIFT:
+  - Este é um efeito que altera a altura do som. Isso pode fazer com que o som pareça mais alto ou mais baixo do que realmente é.
+    
 <img src="Images/D3.png" alt="d3">
  
-Se a opção “Reverb” for selecionada, você poderá ajustar as configurações de reverberação para dar à guitarra um som mais espaçoso e ambiental. Aqui estão algumas opções que você pode encontrar:
+A imagem mostra uma tela de controle de efeitos de áudio do seu aplicativo. 
 
-A interface exibe duas seções relacionadas a efeitos de áudio:
+- Reverb: E
+  - Este é o efeito que foi selecionado. Há um controle deslizante para ajustar a intensidade do efeito de reverberação. O valor atual é 0.
+- Room Size:
+  - Este controle deslizante permite ao usuário ajustar o tamanho da “sala” para o efeito de reverberação. O valor atual é 0.8.
+- Damping:
+  - Este controle deslizante ajusta o amortecimento do efeito de reverberação. O valor atual é 0.5.
+- Spread:
+  - Este controle deslizante ajusta a dispersão do efeito de reverberação. O valor atual é 1.
+- High Pass:
+  - Este controle deslizante ajusta a frequência de corte do filtro passa-alta. O valor atual é 0.
+- Dry e Wet:
+  - Estes são controles deslizantes que ajustam o equilíbrio entre o sinal de áudio original (Dry) e o sinal de áudio processado (Wet). Os valores atuais são 0 e 0.5, respectivamente.
+  
+No canto superior esquerdo, há um interruptor para conectar ou desconectar o cliente. Atualmente, o status do cliente está desconectado.
 
-- Reverb (Reverberação):
-  - A seção “REVERB” está ativa, indicando que o efeito de reverberação está sendo aplicado.
-  - Há uma opção para “REMOVE EFFECT”, que permite desativar o reverb.
-- Tamanho da Sala (ROOM SIZE):
-  - O parâmetro está definido como “0.8” que controla o tamanho simulado da sala para o efeito de reverberação.
+No centro superior, há um interruptor para ativar ou desativar o efeito. Ao lado, há um botão para remover o efeito.
+
+Na parte inferior, há um botão para adicionar mais efeitos.
 
 ## Hora de fazer você mesmo!
 
