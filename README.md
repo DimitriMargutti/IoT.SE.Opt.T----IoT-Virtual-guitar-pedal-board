@@ -69,7 +69,7 @@ The Virtual Guitar Pedalboard uses an architecture based on WebSocket communicat
 - Processed Audio Feedback:
   - After the application of effects, the processed audio is returned to the client. The user then hears the guitar sound with the effects applied directly on their device, allowing for immediate feedback and a continuous, latency-free user experience.
 
-<img src="Images/Architecture.png" alt="Architecture">
+<img src="Images/architecture.png" alt="Architecture">
 
 ### Architecture Benefits
 - Real-time Interactivity: WebSocket communication ensures that changes made in the client application are immediately reflected in the processed audio.
@@ -81,7 +81,7 @@ This modern and efficient architecture not only meets the practical needs of gui
 
 ## Dashboard
 
-<img src="Images/d1.png" alt="d1">
+<img src="Images/D1.png" alt="d1">
 
 - Dashboard Title:
   - The text “START CLIENT SEND TEST PACKET” is at the top of the screen.
@@ -90,7 +90,7 @@ This modern and efficient architecture not only meets the practical needs of gui
 - “ADD EFFECT” Option:
   - At the bottom of the screen, there is a button or option called “ADD EFFECT”. This suggests that the user can add some effect or layer to the application.
 
-<img src="Images/d2.png" alt="d2">
+<img src="Images/D2.png" alt="d2">
  
 After selecting the “ADD EFFECT” option, you will likely see a screen with different types of audio effects to apply to your virtual guitar pedalboard. Here are some possible options that may appear:
 
@@ -101,7 +101,7 @@ After selecting the “ADD EFFECT” option, you will likely see a screen with d
 - Reverb:
   - Reverb simulates the sound of playing in different environments, adding depth and ambiance to the guitar sound.
  
-<img src="Images/d3.png" alt="d3">
+<img src="Images/D3.png" alt="d3">
  
 If the “Reverb” option is selected, you can adjust the reverb settings to give the guitar a more spacious and ambient sound. Here are some options you may encounter:
 
