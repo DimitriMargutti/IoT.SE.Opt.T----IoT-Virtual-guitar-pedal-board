@@ -1,9 +1,8 @@
 ## Tutorial: Running the Virtual Pedalboard with Godot and PortAudio
 
 ### Prerequisites:
-1. Godot Engine installed on your computer.
-2. Basic knowledge of Godot and programming.
-3. PortAudio installed on your computer.
+1. Basic knowledge of Godot and programming.
+2. PortAudio installed on your computer.
 
 ### Steps:
 
@@ -20,7 +19,7 @@
    - Ensure that Godot is configured to use PortAudio as the default audio library for exporting the project. This can be done in the project settings in Godot.
 
 5. **Run the Server:**
-   - In Godot, open the script that defines the WebSocket server and ensure that the settings are correct, such as the IP address and port for connection. Save the changes and run the server.
+   - Open the script that defines the WebSocket server and ensure that the settings are correct, such as the IP address and port for connection. Both the client and the server must be connected to the same network to work. Save the changes and run the server.
 
 6. **Build and Run the Client on Mobile:**
    - Export the Godot project for the desired mobile platform (Android or iOS) and build the application.
