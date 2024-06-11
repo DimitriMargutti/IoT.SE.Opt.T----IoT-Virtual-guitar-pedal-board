@@ -61,7 +61,30 @@ A Pedaleira Virtual para Guitarras utiliza uma arquitetura baseada em comunicaç
   - O usuário interage com a Pedaleira Virtual através de uma aplicação cliente no celular. Esta aplicação oferece uma interface intuitiva para selecionar, configurar e ajustar os efeitos desejados.
 
 - Comunicação via WebSocket:
-  - A aplicação cliente no celular se comunica com o servidor no computador usando WebSockets. Esta tecnologia permite uma comunicação bidirecional em tempo real, essencial para garantir que as alterações de efeitos feitas pelo usuário sejam aplicadas instantaneamente.
+  - A aplicação cliente no celular se comunica com o servidor na Raspberry 4 model B usando WebSockets. Esta tecnologia permite uma comunicação bidirecional em tempo real, essencial para garantir que as alterações de efeitos feitas pelo usuário sejam aplicadas instantaneamente.
+ 
+<img src="Images/rasp.png" alt="rasp">
+ 
+### Raspberry Pi Specifications
+
+| Feature                                      | Description                                                                                        |
+|----------------------------------------------|----------------------------------------------------------------------------------------------------|
+| **Processor**                                | Broadcom BCM2711, Quad core Cortex-A72 (ARM v8) 64-bit SoC @ 1.8GHz                                |
+| **Memory**                                   | 1GB, 2GB, 4GB or 8GB LPDDR4-3200 SDRAM (depending on model)                                        |
+| **Wireless**                                 | 2.4 GHz and 5.0 GHz IEEE 802.11ac wireless, Bluetooth 5.0, BLE                                     |
+| **Ethernet**                                 | Gigabit Ethernet                                                                                   |
+| **USB Ports**                                | 2 USB 3.0 ports; 2 USB 2.0 ports                                                                   |
+| **GPIO Header**                              | Raspberry Pi standard 40 pin GPIO header (fully backwards compatible with previous boards)         |
+| **Display**                                  | 2 × micro-HDMI® ports (up to 4kp60 supported)                                                      |
+| **MIPI DSI Display Port**                    | 2-lane MIPI DSI display port                                                                       |
+| **MIPI CSI Camera Port**                     | 2-lane MIPI CSI camera port                                                                        |
+| **Audio/Video Port**                         | 4-pole stereo audio and composite video port                                                       |
+| **Video Decode/Encode**                      | H.265 (4kp60 decode), H264 (1080p60 decode, 1080p30 encode)                                         |
+| **Graphics**                                 | OpenGL ES 3.1, Vulkan 1.0                                                                          |
+| **Storage**                                  | Micro-SD card slot for loading operating system and data storage                                   |
+| **Power Supply**                             | 5V DC via USB-C connector (minimum 3A*), 5V DC via GPIO header (minimum 3A*), Power over Ethernet (PoE) enabled (requires separate PoE HAT) |
+| **Operating Temperature**                    | 0 – 50 degrees C ambient                                                                           |
+
 
 - Aplicação dos Efeitos:
   - Quando o usuário seleciona e configura os efeitos na aplicação do celular, essas configurações são enviadas ao servidor através do WebSocket. O servidor, por sua vez, aplica os efeitos recebidos ao áudio da guitarra em tempo real, utilizando a engine de processamento de áudio.
