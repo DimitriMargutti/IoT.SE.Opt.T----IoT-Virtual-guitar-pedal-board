@@ -29,18 +29,101 @@ Em suma, a motivação para criar a Pedaleira Virtual para Guitarras é fornecer
 - Plataforma Flexível e de Código Aberto:
   - Fornecer uma plataforma flexível e de código aberto que permite futuras expansões e colaborações da comunidade de músicos e desenvolvedores, incentivando a inovação contínua e a melhoria do software através de contribuições comunitárias.
 
-## Architecture
+## Architecture and Communication Protocols
 
-## Communication Protocols
+A Pedaleira Virtual para Guitarras utiliza uma arquitetura baseada em comunicação via WebSocket, permitindo uma interação eficiente e em tempo real entre o usuário e o sistema. A seguir, descrevemos os principais componentes e o fluxo de funcionamento do projeto:
 
+- Conexão da Guitarra ao Computador:
+  - O usuário conecta a guitarra a um dispositivo de interface de áudio, conhecido como Guitar Link, que está conectado ao computador. O Guitar Link converte o sinal analógico da guitarra em um formato digital que pode ser processado pela aplicação.
+ 
+<img src="Images/Guitarlink.png" alt="Architecture">
+
+| **Características**                                                                                             | **Descrição**                                                                                                                                                          |
+|---------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Saída Adicional                                                                                               | P10 para fone de ouvido estéreo ou para monitoramento com alto-falantes ativos (caixas).                                                                             |
+| Compatibilidade                                                                                               | Trabalha diretamente com PC ou MAC, acompanha CD de instalação.                                                                                                      |
+| Durabilidade                                                                                                  | Componentes de alta qualidade que garantem a durabilidade.                                                                                                           |
+| Alimentação USB                                                                                               | Porta USB não necessita de alimentação externa.                                                                                                                      |
+| Instalação                                                                                                    | Fácil instalação (PLUG and PLAY).                                                                                                                                    |
+| Interface USB                                                                                                | Guitar Link é um dispositivo com interface USB que permite conectar facilmente sua guitarra ao PC para um trabalho profissional de amplificação, gravação e edição.  |
+| Efeitos                                                                                                       | Uso dos efeitos clássicos em estúdio bem como no palco.                                                                                                              |
+| Gravação e Edição                                                                                            | Gravação digital e edição de alta qualidade.                                                                                                                          |
+| Reprodução de Arquivos                                                                                       | Reprodução de arquivos MP3, WAV, AIFF.                                                                                                                               |
+| Compatibilidade com Sistemas Operacionais                                                                    | Compatível com Mac OS e Windows XP/Vista/7/8.                                                                                                                        |
+| Reprodução em Tempo Real                                                                                      | Reprodução em tempo real sem latência/atraso na reprodução.                                                                                                           |
+| Qualidade de Áudio                                                                                           | Som estéreo para fones de ouvido, qualidade de áudio 16-bit, 44.1/48kHz.                                                                                              |
+
+
+- Biblioteca de Áudio e Engine de Processamento:
+  - No computador, uma biblioteca de áudio dedicada recebe o sinal digital da guitarra. Esta biblioteca é responsável por capturar e preparar o áudio para processamento. Em seguida, a engine de efeitos de áudio entra em ação, pronta para aplicar os efeitos selecionados pelo usuário.
+
+- Aplicação Cliente no Celular:
+  - O usuário interage com a Pedaleira Virtual através de uma aplicação cliente no celular. Esta aplicação oferece uma interface intuitiva para selecionar, configurar e ajustar os efeitos desejados.
+
+- Comunicação via WebSocket:
+  - A aplicação cliente no celular se comunica com o servidor no computador usando WebSockets. Esta tecnologia permite uma comunicação bidirecional em tempo real, essencial para garantir que as alterações de efeitos feitas pelo usuário sejam aplicadas instantaneamente.
+
+- Aplicação dos Efeitos:
+  - Quando o usuário seleciona e configura os efeitos na aplicação do celular, essas configurações são enviadas ao servidor através do WebSocket. O servidor, por sua vez, aplica os efeitos recebidos ao áudio da guitarra em tempo real, utilizando a engine de processamento de áudio.
+
+- Retorno do Áudio Processado:
+  - Após a aplicação dos efeitos, o áudio processado é devolvido ao cliente. O usuário então ouve o som da guitarra com os efeitos aplicados diretamente em seu dispositivo, permitindo um feedback imediato e uma experiência de uso contínua e sem latência perceptível.
+
+<img src="Images/Architecture.png" alt="Architecture">
+
+### Benefícios da Arquitetura
+- Interatividade em Tempo Real: A comunicação via WebSocket garante que as mudanças feitas na aplicação cliente sejam refletidas imediatamente no áudio processado.
+- Flexibilidade e Personalização: Os usuários podem personalizar uma vasta gama de efeitos diretamente do celular, ajustando parâmetros em tempo real conforme suas necessidades e preferências.
+- Integração Simples: O uso de um Guitar Link simplifica a conexão da guitarra ao sistema, tornando a configuração acessível tanto para iniciantes quanto para profissionais.
+- Experiência Autêntica: A engine de processamento de áudio no computador aplica os efeitos com alta fidelidade, proporcionando uma experiência sonora autêntica que se aproxima da utilização de equipamentos físicos tradicionais.
+  
+Essa arquitetura moderna e eficiente não só atende às necessidades práticas dos guitarristas, como também abre caminho para futuras expansões e melhorias, mantendo a flexibilidade e a colaboração aberta como pilares fundamentais do projeto.
 ## Dashboard
 
-## Time to Make the project yourself
+<img src="Images/d1.png" alt="d1">
+
+- Título da Dashboard:
+  - O texto “START CLIENT SEND TEST PACKET” está no topo da tela.
+- Status do Cliente:
+  - Logo abaixo do título, há uma linha que diz “CLIENT STATUS CONECTADO ID# 78829240”. Isso indica que o cliente está conectado e possui um ID específico.
+- Opção “ADD EFFECT”:
+  - Na parte inferior da tela, há um botão ou opção chamado “ADD EFFECT”. Isso sugere que o usuário pode adicionar algum efeito ou camada ao aplicativo.
+
+<img src="Images/d2.png" alt="d2">
+ 
+Após selecionar a opção “ADD EFFECT”, você provavelmente verá uma tela com diferentes tipos de efeitos de áudio para aplicar à sua pedaleira virtual de guitarra. Aqui estão algumas possíveis opções que podem aparecer:
+
+- Delay (Atraso):
+  - O efeito de delay adiciona repetições do som da guitarra, criando um efeito de eco. Você pode ajustar o tempo entre as repetições e a quantidade de feedback.
+- Overdrive (Saturação):
+  - O overdrive é usado para adicionar distorção suave ao som da guitarra, dando-lhe um timbre mais quente e “sujinho”.
+- Reverb (Reverberação):
+  - O reverb simula o som de tocar em diferentes ambientes, adicionando profundidade e ambiente ao som da guitarra.
+ 
+<img src="Images/d3.png" alt="d3">
+ 
+Se a opção “Reverb” for selecionada, você poderá ajustar as configurações de reverberação para dar à guitarra um som mais espaçoso e ambiental. Aqui estão algumas opções que você pode encontrar:
+
+A interface exibe duas seções relacionadas a efeitos de áudio:
+
+- Reverb (Reverberação):
+  - A seção “REVERB” está ativa, indicando que o efeito de reverberação está sendo aplicado.
+  - Há uma opção para “REMOVE EFFECT”, que permite desativar o reverb.
+- Tamanho da Sala (ROOM SIZE):
+  - O parâmetro está definido como “0.8” que controla o tamanho simulado da sala para o efeito de reverberação.
+
+## Time to Make the project by yourself
+
+For informations on how to install and configure the app's used in this project, [Click here](https://github.com/DimitriMargutti/IoT.SE.Opt.T---Virtual-guitar-pedal-board/blob/main/Instalation_and_configuration/README.md)
 
 ## Mentorship
 
-This project was developed with the mentorship of Dhiego Fernandes Carvalho professor at State University of São Paulo
+This project was developed with the mentorship of [Dhiego Fernandes](https://github.com/DhiegoFC/IoT_for_Embedded_Devices) Carvalho professor at State University of São Paulo
 
 ## References
 
-
+- Documentação: relacionada à inspiração para o projeto:
+  - [GDExtension](https://docs.godotengine.org/en/stable/tutorials/scripting/gdextension/index.html)
+  - [Godot Engine](https://godotengine.org)
+  - [PortAudio](https://github.com/PortAudio/portaudio)
+  
