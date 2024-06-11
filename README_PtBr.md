@@ -69,7 +69,7 @@ A Pedaleira Virtual para Guitarras utiliza uma arquitetura baseada em comunicaç
 - Retorno do Áudio Processado:
   - Após a aplicação dos efeitos, o áudio processado é devolvido ao cliente. O usuário então ouve o som da guitarra com os efeitos aplicados diretamente em seu dispositivo, permitindo um feedback imediato e uma experiência de uso contínua e sem latência perceptível.
 
-<img src="Images/Architecture.png" alt="Architecture">
+<img src="Images/architecture.png" alt="Architecture">
 
 ### Benefícios da Arquitetura
 - Interatividade em Tempo Real: A comunicação via WebSocket garante que as mudanças feitas na aplicação cliente sejam refletidas imediatamente no áudio processado.
@@ -80,7 +80,7 @@ A Pedaleira Virtual para Guitarras utiliza uma arquitetura baseada em comunicaç
 Essa arquitetura moderna e eficiente não só atende às necessidades práticas dos guitarristas, como também abre caminho para futuras expansões e melhorias, mantendo a flexibilidade e a colaboração aberta como pilares fundamentais do projeto.
 ## Dashboard
 
-<img src="Images/d1.png" alt="d1">
+<img src="Images/D1.png" alt="d1">
 
 - Título da Dashboard:
   - O texto “START CLIENT SEND TEST PACKET” está no topo da tela.
@@ -89,7 +89,7 @@ Essa arquitetura moderna e eficiente não só atende às necessidades práticas 
 - Opção “ADD EFFECT”:
   - Na parte inferior da tela, há um botão ou opção chamado “ADD EFFECT”. Isso sugere que o usuário pode adicionar algum efeito ou camada ao aplicativo.
 
-<img src="Images/d2.png" alt="d2">
+<img src="Images/D2.png" alt="d2">
  
 Após selecionar a opção “ADD EFFECT”, você provavelmente verá uma tela com diferentes tipos de efeitos de áudio para aplicar à sua pedaleira virtual de guitarra. Aqui estão algumas possíveis opções que podem aparecer:
 
@@ -100,7 +100,7 @@ Após selecionar a opção “ADD EFFECT”, você provavelmente verá uma tela 
 - Reverb (Reverberação):
   - O reverb simula o som de tocar em diferentes ambientes, adicionando profundidade e ambiente ao som da guitarra.
  
-<img src="Images/d3.png" alt="d3">
+<img src="Images/D3.png" alt="d3">
  
 Se a opção “Reverb” for selecionada, você poderá ajustar as configurações de reverberação para dar à guitarra um som mais espaçoso e ambiental. Aqui estão algumas opções que você pode encontrar:
 
