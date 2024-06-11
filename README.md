@@ -19,7 +19,7 @@ Em suma, a motivação para criar a Pedaleira Virtual para Guitarras é fornecer
 ## Objectives of the Project
 
 - Proporcionar uma Experiência Completa e Intuitiva:
--     Desenvolver uma aplicação virtual que oferece uma experiência de pedaleira de guitarra completa e intuitiva, permitindo que os usuários naveguem e utilizem facilmente os diversos recursos e efeitos disponíveis.
+  - Desenvolver uma aplicação virtual que oferece uma experiência de pedaleira de guitarra completa e intuitiva, permitindo que os usuários naveguem e utilizem facilmente os diversos recursos e efeitos disponíveis.
 
 - Variedade de Efeitos Sonoros:
 -     Permitir aos usuários experimentar uma ampla gama de efeitos sonoros, incluindo distorção, delay, reverb, chorus, entre outros, possibilitando a criação de sons únicos e personalizados para cada estilo musical.
