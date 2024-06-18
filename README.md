@@ -69,7 +69,7 @@ The Virtual Guitar Pedalboard uses an architecture based on WebSocket communicat
 - Processed Audio Feedback:
   - After the application of effects, the processed audio is returned to the client. The user then hears the guitar sound with the effects applied directly on their device, allowing for immediate feedback and a continuous, latency-free user experience.
 
-<img src="Images/architecture.png" alt="Architecture">
+<img src="Images/arch.png" alt="Architecture">
 
 ### Architecture Benefits
 - Real-time Interactivity: WebSocket communication ensures that changes made in the client application are immediately reflected in the processed audio.
