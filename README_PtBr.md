@@ -152,6 +152,27 @@ No centro superior, há um interruptor para ativar ou desativar o efeito. Ao lad
 
 Na parte inferior, há um botão para adicionar mais efeitos.
 
+## Planos futuros 
+1. Sistema de Gravação no Cliente:
+   
+- Implementar um sistema de gravação diretamente na aplicação cliente, permitindo que os usuários capturem e armazenem suas sessões de prática ou performances. Isso facilita o processo de revisão e análise do desempenho musical.
+
+2. Salvamento de Presets do Usuário
+   
+- Adicionar a funcionalidade para salvar e carregar presets de efeitos criados pelos usuários. Isso permitirá que os guitarristas tenham acesso rápido às suas configurações favoritas, melhorando a eficiência durante práticas e performances.
+
+3. Integração com Serviços de Nuvem
+
+- Implementar integração com serviços de armazenamento em nuvem para que os usuários possam salvar suas gravações e presets na nuvem, garantindo acesso a partir de qualquer dispositivo e local.
+
+4. Interface de Usuário Aprimorada
+
+- Melhorar a interface da aplicação cliente para torná-la ainda mais intuitiva e amigável, com gráficos interativos e controles mais precisos para ajustes de efeitos.
+
+5. Efeitos Adicionais e Personalização
+
+- Expandir a biblioteca de efeitos disponíveis, incluindo simulações de amplificadores, pedais de boutique e efeitos personalizados. Além disso, permitir que os usuários ajustem parâmetros avançados dos efeitos para uma personalização ainda maior.
+
 ## Hora de fazer você mesmo!
 
 Para informações sobre como instalar e configurar os aplicativos utilizados neste projeto [clique aqui](https://github.com/DimitriMargutti/IoT.SE.Opt.T---Virtual-guitar-pedal-board/blob/main/Instalation_and_configuration/README.md)
