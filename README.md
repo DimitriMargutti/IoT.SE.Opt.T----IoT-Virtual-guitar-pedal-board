@@ -31,51 +31,75 @@ In summary, the motivation to create the Virtual Guitar Pedalboard is to provide
 
 ## Architecture and Communication Protocols
 
-The Virtual Guitar Pedalboard uses an architecture based on WebSocket communication, allowing efficient and real-time interaction between the user and the system. Below, we describe the main components and the operation flow of the project:
+- The Virtual Guitar Pedalboard
 
-- Guitar Connection to the Computer:
-  - The user connects the guitar to an audio interface device, known as Guitar Link, which is connected to the computer. The Guitar Link converts the guitar's analog signal into a digital format that can be processed by the application.
-    
- <img src="Images/Guitarlink.png" alt="Architecture">
+  - The Virtual Guitar Pedalboard uses an architecture based on WebSocket communication, allowing efficient and real-time interaction between the user and the system. Below, we describe the main components and the project workflow:
 
-| **Features**                                                                                             | **Description**                                                                                                                                                          |
-|---------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Additional Output                                                                                               | P10 for stereo headphone or for monitoring with active speakers (boxes).                                                                             |
-| Compatibility                                                                                               | Works directly with PC or MAC, comes with installation CD.                                                                                                      |
-| Durability                                                                                                  | High-quality components that guarantee durability.                                                                                                           |
-| USB Power                                                                                               | USB port does not require external power.                                                                                                                      |
-| Installation                                                                                                    | Easy installation (PLUG and PLAY).                                                                                                                                    |
-| USB Interface                                                                                                | Guitar Link is a USB interface device that allows you to easily connect your guitar to your PC for professional amplification, recording, and editing work.  |
-| Effects                                                                                                       | Use of classic effects in studio as well as on stage.                                                                                                              |
-| Recording and Editing                                                                                            | Digital recording and high-quality editing.                                                                                                                          |
-| File Playback                                                                                       | Playback of MP3, WAV, AIFF files.                                                                                                                               |
-| Operating System Compatibility                                                                    | Compatible with Mac OS and Windows XP/Vista/7/8.                                                                                                                        |
-| Real-time Playback                                                                                      | Real-time playback without latency/delay.                                                                                                           |
-| Audio Quality                                                                                           | Stereo sound for headphones, audio quality 16-bit, 44.1/48kHz.                                                                                              |
+![Architecture](Images/arch.png)
 
+- Connecting the Guitar to the Computer:
+  - The user connects the guitar to an audio interface device known as Guitar Link, which is connected to the computer. The Guitar Link converts the guitar's analog signal into a digital format that can be processed by the application.
+
+![Guitar Link](Images/Guitarlink.png)
+
+| **Features**               | **Description**                                                                                                                                   |
+|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| Additional Output          | P10 for stereo headphones or monitoring with active speakers (boxes).                                                                             |
+| Compatibility              | Works directly with PC or MAC, includes installation CD.                                                                                          |
+| Durability                 | High-quality components that ensure durability.                                                                                                   |
+| USB Power                  | USB port does not require external power.                                                                                                         |
+| Installation               | Easy installation (PLUG and PLAY).                                                                                                                |
+| USB Interface              | Guitar Link is a USB interface device that allows you to easily connect your guitar to the PC for professional amplification, recording, and editing work. |
+| Effects                    | Use of classic studio effects as well as on stage.                                                                                                |
+| Recording and Editing      | High-quality digital recording and editing.                                                                                                       |
+| File Playback              | Playback of MP3, WAV, AIFF files.                                                                                                                 |
+| Operating System Compatibility | Compatible with Mac OS and Windows XP/Vista/7/8.                                                                                           |
+| Real-time Playback         | Real-time playback without latency/delay in playback.                                                                                             |
+| Audio Quality              | Stereo sound for headphones, 16-bit audio quality, 44.1/48kHz.                                                                                    |
 
 - Audio Library and Processing Engine:
-  - On the computer, a dedicated audio library receives the guitar's digital signal. This library is responsible for capturing and preparing the audio for processing. Then, the audio effects engine comes into action, ready to apply the effects selected by the user.
+  - On the computer, a dedicated audio library receives the guitar's digital signal. This library is responsible for capturing and preparing the audio for processing. Then, the audio effects engine kicks in, ready to apply the effects selected by the user.
 
-- Client Application on Mobile:
-  - The user interacts with the Virtual Pedalboard through a client application on their mobile device. This application provides an intuitive interface for selecting, configuring, and adjusting desired effects.
+- Mobile Client Application:
+  - The user interacts with the Virtual Pedalboard through a mobile client application. This application provides an intuitive interface for selecting, configuring, and adjusting the desired effects.
 
-- Communication via WebSocket:
-  - The client application on the mobile device communicates with the server on the computer using WebSockets. This technology allows for bidirectional real-time communication, essential to ensure that effect changes made by the user are applied instantly.
+- WebSocket Communication:
+  - The mobile client application communicates with the server on the Raspberry Pi 4 Model B using WebSockets. This technology enables real-time bidirectional communication, essential to ensure that the effect changes made by the user are applied instantly.
 
-- Application of Effects:
-  - When the user selects and configures the effects in the mobile application, these settings are sent to the server via WebSocket. The server, in turn, applies the received effects to the guitar audio in real-time, using the audio processing engine.
+<img src="Images/Rasp.png" alt="rasp">
 
-- Processed Audio Feedback:
-  - After the application of effects, the processed audio is returned to the client. The user then hears the guitar sound with the effects applied directly on their device, allowing for immediate feedback and a continuous, latency-free user experience.
+### Raspberry Pi Specifications
 
-<img src="Images/arch.png" alt="Architecture">
+| **Features**                                   | **Description**                                                                                               |
+|----------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| **Processor**                                | Broadcom BCM2711, Quad core Cortex-A72 (ARM v8) 64-bit SoC @ 1.8GHz                                           |
+| **Memory**                                   | 1GB, 2GB, 4GB, or 8GB LPDDR4-3200 SDRAM (depending on model)                                                  |
+| **Wireless Connectivity**                    | 2.4 GHz and 5.0 GHz IEEE 802.11ac wireless, Bluetooth 5.0, BLE                                                |
+| **Ethernet**                                 | Gigabit Ethernet                                                                                              |
+| **USB Ports**                                | 2 USB 3.0 ports; 2 USB 2.0 ports                                                                              |
+| **GPIO Header**                              | Standard 40-pin Raspberry Pi GPIO header (fully backward compatible with previous models)                     |
+| **Display**                                  | 2 micro-HDMI® ports (supports up to 4kp60)                                                                    |
+| **MIPI DSI Display Port**                    | 2-lane MIPI DSI display port                                                                                  |
+| **MIPI CSI Camera Port**                     | 2-lane MIPI CSI camera port                                                                                   |
+| **Audio/Video Port**                         | 4-pole stereo audio and composite video port                                                                  |
+| **Video Decoding/Encoding**                  | H.265 (4kp60 decode), H264 (1080p60 decode, 1080p30 encode)                                                   |
+| **Graphics**                                 | OpenGL ES 3.1, Vulkan 1.0                                                                                     |
+| **Storage**                                  | Micro-SD card slot for operating system loading and data storage                                              |
+| **Power Supply**                             | 5V DC via USB-C connector (minimum 3A*), 5V DC via GPIO header (minimum 3A*), Power over Ethernet (PoE) enabled (requires separate PoE HAT) |
+| **Operating Temperature**                    | 0 – 50 degrees C ambient                                                                                      |
+
+- **Effect Application:**
+  - When the user selects and configures effects on the mobile application, these settings are sent to the server via WebSocket. The server then applies the received effects to the guitar audio in real-time using the audio processing engine.
+
+- **Processed Audio Return:**
+  - After the effects are applied, the processed audio is returned to the client. The user then hears the guitar sound with the applied effects directly on their device, allowing for immediate feedback and a continuous, perceptible latency-free experience.
 
 ### Architecture Benefits
-- Real-time Interactivity: WebSocket communication ensures that changes made in the client application are immediately reflected in the processed audio.
-- Flexibility and Customization: Users can customize a wide range of effects directly from their mobile devices, adjusting parameters in real-time according to their needs and preferences.
-- Simple Integration: The use of a Guitar Link simplifies the connection of the guitar to the system, making the setup accessible for both beginners and professionals.
-- Authentic Experience: The audio processing engine on the computer applies effects with high fidelity, providing an authentic sound experience that approaches the use of traditional physical equipment.
+
+- **Real-Time Interactivity:** WebSocket communication ensures that changes made in the client application are immediately reflected in the processed audio.
+- **Flexibility and Customization:** Users can customize a wide range of effects directly from their mobile devices, adjusting parameters in real-time according to their needs and preferences.
+- **Simple Integration:** Using a Guitar Link simplifies the connection of the guitar to the system, making the setup accessible for both beginners and professionals.
+- **Authentic Experience:** The audio processing engine on the computer applies effects with high fidelity, providing an authentic sound experience that closely resembles the use of traditional physical equipment.
 
 This modern and efficient architecture not only meets the practical needs of guitarists but also paves the way for future expansions and improvements, maintaining flexibility and open collaboration as fundamental pillars of the project.
 
@@ -83,35 +107,75 @@ This modern and efficient architecture not only meets the practical needs of gui
 
 <img src="Images/D1.png" alt="d1">
 
-- Dashboard Title:
-  - The text “START CLIENT SEND TEST PACKET” is at the top of the screen.
-- Client Status:
-  - Below the title, there is a line that says “CLIENT STATUS CONNECTED ID# 78829240”. This indicates that the client is connected and has a specific ID.
-- “ADD EFFECT” Option:
-  - At the bottom of the screen, there is a button or option called “ADD EFFECT”. This suggests that the user can add some effect or layer to the application.
+- **Connection Buttons:**
+  - At the top of the screen, you will see two buttons: “CONNECT” and “DISCONNECT.” You can use these buttons to connect or disconnect from a server or service.
+- **Client Status:**
+  - Just below the connection buttons, there is a message showing the current connection status. If you are connected, it will say “CLIENT STATUS: CONNECTED.” If you are disconnected, it will say “CLIENT STATUS: DISCONNECTED.”
+- **WebSocket Addresses:**
+  - Below the client status, there are two WebSocket addresses. These are the addresses the application will use to connect to the server or service.
+- **Add Effect:**
+  - At the bottom of the screen, there is an “ADD EFFECT” button. This button allows you to add special effects to your connection.
 
 <img src="Images/D2.png" alt="d2">
- 
+
 After selecting the “ADD EFFECT” option, you will likely see a screen with different types of audio effects to apply to your virtual guitar pedalboard. Here are some possible options that may appear:
 
-- Delay:
-  - The delay effect adds repetitions of the guitar sound, creating an echo effect. You can adjust the time between repetitions and the amount of feedback.
-- Overdrive:
-  - Overdrive is used to add gentle distortion to the guitar sound, giving it a warmer and “grittier” tone.
-- Reverb:
-  - Reverb simulates the sound of playing in different environments, adding depth and ambiance to the guitar sound.
- 
+- **DELAY:**
+  - This is an effect that reproduces a recorded sound and plays it back after a period of time, creating an echo effect.
+- **DISTORTION:**
+  - This effect alters the sound in a way that makes it harsher or rougher. It is commonly used in rock music to create a heavier guitar sound.
+- **REVERB:**
+  - This effect simulates the sound of a specific environment, such as a large room or a cave. It gives the sound a sense of space and depth.
+- **CHORUS:**
+  - This effect makes the sound appear as if multiple people are playing or singing at the same time, creating a fuller and richer sound.
+- **PITCH SHIFT:**
+  - This effect changes the pitch of the sound, making it appear higher or lower than it actually is.
+
 <img src="Images/D3.png" alt="d3">
- 
-If the “Reverb” option is selected, you can adjust the reverb settings to give the guitar a more spacious and ambient sound. Here are some options you may encounter:
 
-The interface displays two sections related to audio effects:
+The image shows an audio effect control screen of your application.
 
-- Reverb:
-  - The “REVERB” section is active, indicating that the reverb effect is being applied.
-  - There is an option for “REMOVE EFFECT”, which allows you to deactivate the reverb.
-- Room Size:
-  - The parameter is set to “0.8” which controls the simulated room size for the reverb effect.
+- **Reverb:**
+  - This is the selected effect. There is a slider to adjust the intensity of the reverb effect. The current value is 0.
+- **Room Size:**
+  - This slider allows the user to adjust the “room” size for the reverb effect. The current value is 0.8.
+- **Damping:**
+  - This slider adjusts the damping of the reverb effect. The current value is 0.5.
+- **Spread:**
+  - This slider adjusts the spread of the reverb effect. The current value is 1.
+- **High Pass:**
+  - This slider adjusts the high-pass filter cutoff frequency. The current value is 0.
+- **Dry and Wet:**
+  - These are sliders that adjust the balance between the original audio signal (Dry) and the processed audio signal (Wet). The current values are 0 and 0.5, respectively.
+
+In the upper left corner, there is a switch to connect or disconnect the client. Currently, the client status is disconnected.
+
+In the upper center, there is a switch to enable or disable the effect. Next to it, there is a button to remove the effect.
+
+At the bottom, there is a button to add more effects.
+
+## Future Plans
+
+1. **Client-Side Recording System:**
+   
+   - Implement a recording system directly in the client application, allowing users to capture and store their practice sessions or performances. This facilitates the process of reviewing and analyzing musical performance.
+
+2. **User Preset Saving:**
+   
+   - Add functionality to save and load user-created effect presets. This will enable guitarists to quickly access their favorite settings, improving efficiency during practice and performances.
+
+3. **Cloud Service Integration:**
+
+   - Implement integration with cloud storage services so users can save their recordings and presets in the cloud, ensuring access from any device and location.
+
+4. **Enhanced User Interface:**
+
+   - Improve the client application interface to make it even more intuitive and user-friendly, with interactive graphics and more precise controls for effect adjustments.
+
+5. **Additional Effects and Customization:**
+
+   - Expand the library of available effects, including amp simulations, boutique pedals, and custom effects. Additionally, allow users to adjust advanced effect parameters for even greater customization.
+
 
 ## Time to Make the project by yourself
 
