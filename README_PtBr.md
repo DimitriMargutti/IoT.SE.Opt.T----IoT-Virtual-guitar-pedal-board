@@ -33,7 +33,7 @@ Em suma, a motivação para criar a Pedaleira Virtual para Guitarras é fornecer
 
 A Pedaleira Virtual para Guitarras utiliza uma arquitetura baseada em comunicação via WebSocket, permitindo uma interação eficiente e em tempo real entre o usuário e o sistema. A seguir, descrevemos os principais componentes e o fluxo de funcionamento do projeto:
 
-<img src="Images/architecture.png" alt="Architecture">
+<img src="Images/arch.png" alt="Architecture">
 
 - Conexão da Guitarra ao Computador:
   - O usuário conecta a guitarra a um dispositivo de interface de áudio, conhecido como Guitar Link, que está conectado ao computador. O Guitar Link converte o sinal analógico da guitarra em um formato digital que pode ser processado pela aplicação.
